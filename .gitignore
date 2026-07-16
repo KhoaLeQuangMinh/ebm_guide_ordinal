@@ -2,8 +2,10 @@
 outputs/
 *.pth
 
-# SuStaIn generated results and runs
+# SuStaIn generated results, pickle files, and runs
+*.pickle
 sustain_asymmetric_output/
+sustain_asymmetric_as_output/
 sustain_cv_asymmetric_output/
 sustain_cv_output/
 sustain_output/

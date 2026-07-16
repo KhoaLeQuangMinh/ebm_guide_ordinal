@@ -4,9 +4,9 @@ import numpy as np
 import os
 
 # 1. Paths
-data_path = "/Users/khoale/Downloads/Alzheimer_Code/csvs/adni_mri_sustain_prepared_asymmetric.csv"
-pickle_path = "/Users/khoale/Downloads/Alzheimer_Code/sustain_asymmetric_output/pickle_files/ADNI_asym_subtype2.pickle"
-output_csv_path = "/Users/khoale/Downloads/Alzheimer_Code/sustain_subject_staging_results.csv"
+data_path = "/Users/khoale/Downloads/Alzheimer_Code/csvs/adni_mri_sustain_prepared_asymmetric_as.csv"
+pickle_path = "/Users/khoale/Downloads/Alzheimer_Code/sustain_asymmetric_as_output/pickle_files/ADNI_asym_subtype2.pickle"
+output_csv_path = "/Users/khoale/Downloads/Alzheimer_Code/sustain_subject_staging_results_as.csv"
 
 # Load the prepared dataset to match labels
 df = pd.read_csv(data_path)

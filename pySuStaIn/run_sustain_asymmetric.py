@@ -4,7 +4,7 @@ from pySuStaIn.ZscoreSustain import ZscoreSustain
 import os
 
 # 1. Load the asymmetric dataset
-data_path = "/Users/khoale/Downloads/Alzheimer_Code/csvs/adni_mri_sustain_prepared_asymmetric.csv"
+data_path = "/Users/khoale/Downloads/Alzheimer_Code/csvs/adni_mri_sustain_prepared_asymmetric_as.csv"
 df = pd.read_csv(data_path)
 
 # 2. Define the 24 asymmetric biomarkers
@@ -24,7 +24,7 @@ Z_max = np.array([5.0] * len(regions))           # Cap maximum Z-score at 5.0
 N_startpoints = 25              # Standard for global search
 N_S_max = 3                     # Fits 1, 2, and 3 subtypes
 N_iterations_MCMC = 100000      # 100,000 iterations for MCMC
-output_folder = "/Users/khoale/Downloads/Alzheimer_Code/sustain_asymmetric_output"
+output_folder = "/Users/khoale/Downloads/Alzheimer_Code/sustain_asymmetric_as_output"
 dataset_name = "ADNI_asym"
 
 if not os.path.exists(output_folder):

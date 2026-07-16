@@ -352,7 +352,11 @@ def train_fold_pipeline(train_idx, val_idx, test_idx, dataset, fold_name, args):
             
     # Load Best Model for Testing
     print(f"Loading best model checkpoint for Fold {fold_name} and running inference on Test partition...")
-    checkpoint = torch.load(os.path.join(output_dir, f"best_model_{fold_name}.pth"), map_location=args.device)
+    checkpoint = torch.load(
+        os.path.join(output_dir, f"best_model_{fold_name}.pth"), 
+        map_location=args.device,
+        weights_only=False
+    )
     model.load_state_dict(checkpoint['model_state_dict'])
     
     test_loss, test_sub, test_stg, test_acc, test_f1, test_mse, test_mae, test_qwk, test_rho = evaluate(model, test_loader, args)
