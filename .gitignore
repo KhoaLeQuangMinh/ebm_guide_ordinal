@@ -1,0 +1,22 @@
+# Model checkpoints & heavy output runs
+outputs/
+*.pth
+
+# SuStaIn generated results and runs
+sustain_asymmetric_output/
+sustain_cv_asymmetric_output/
+sustain_cv_output/
+sustain_output/
+sustain_test_output/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# IDE and OS configurations
+.DS_Store
+.vscode/
+.idea/

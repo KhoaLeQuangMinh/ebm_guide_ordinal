@@ -1,0 +1,601 @@
+PTID,PTID,Label,EXAMDATE,MRI_ImageID,MRI_Description,MRI_AcqDate,MRI_Tier,PET_ImageID,PET_Description,PET_AcqDate,PET_Tier,Gap_MRI_PET,Gap_MRI_DX,Gap_PET_DX
+003_S_1057,003_S_1057,pMCI,2007-02-09,I52820,MPR; GradWarp; B1 Correction; N3,2006-12-04,0,I44222,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-16,0,74,67,7
+003_S_1059,003_S_1059,AD,2006-12-12,I52811,MPR; GradWarp; B1 Correction; N3,2006-11-09,0,I37089,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-10,0,62,33,29
+003_S_1257,003_S_1257,AD,2007-03-28,I52789,MPR; GradWarp; B1 Correction; N3,2007-03-01,0,I54930,"Coreg, Avg, Standardized Image and Voxel Size",2007-05-10,0,70,27,43
+003_S_4119,003_S_4119,CN,2011-08-18,I254756,MT1; GradWarp; N3m,2011-08-09,2,I257127,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-18,0,9,9,0
+003_S_4136,003_S_4136,AD,2011-08-23,I250665,MT1; GradWarp; N3m,2011-08-10,2,I257223,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-23,0,13,13,0
+003_S_4152,003_S_4152,AD,2011-09-27,I255415,MT1; GradWarp; N3m,2011-08-30,2,I259151,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-27,0,28,28,0
+003_S_4350,003_S_4350,CN,2011-12-15,I272720,MT1; GradWarp; N3m,2011-11-09,2,I275666,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-15,0,36,36,0
+003_S_4373,003_S_4373,AD,2012-01-31,I278123,MT1; GradWarp; N3m,2011-12-15,2,I280191,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-19,0,35,47,12
+003_S_4441,003_S_4441,CN,2012-01-18,I277673,MT1; GradWarp; N3m,2012-01-03,2,I282308,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-20,0,17,15,2
+003_S_4555,003_S_4555,CN,2012-03-23,I291888,MT1; GradWarp; N3m,2012-03-05,2,I295173,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-23,0,18,18,0
+003_S_4644,003_S_4644,CN,2012-05-14,I300940,MT1; GradWarp; N3m,2012-04-19,2,I307668,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-14,0,25,25,0
+003_S_4872,003_S_4872,CN,2012-09-14,I322305,MT1; GradWarp; N3m,2012-08-02,2,I340973,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-23,0,21,43,22
+003_S_4892,003_S_4892,AD,2012-09-14,I327046,MT1; GradWarp; N3m,2012-08-23,2,I334484,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-11,0,19,22,3
+003_S_4900,003_S_4900,CN,2012-09-05,I326633,MT1; GradWarp; N3m,2012-08-15,2,I334502,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-28,0,13,21,8
+003_S_5150,003_S_5150,CN,2013-07-01,I392272,MT1; GradWarp; N3m,2013-05-24,2,I377118,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-05,0,12,38,26
+003_S_5154,003_S_5154,CN,2013-06-27,I392288,MT1; GradWarp; N3m,2013-04-30,2,I377122,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-10,0,41,58,17
+003_S_5165,003_S_5165,AD,2013-06-20,I392426,MT1; GradWarp; N3m,2013-05-16,2,I384737,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-13,0,28,35,7
+003_S_5187,003_S_5187,AD,2013-07-01,I392428,MT1; GradWarp; N3m,2013-06-07,2,I384404,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-21,0,14,24,10
+003_S_5209,003_S_5209,CN,2013-08-16,I392430,MT1; GradWarp; N3m,2013-07-09,2,I384412,"Coreg, Avg, Standardized Image and Voxel Size",2013-07-31,0,22,38,16
+005_S_0610,005_S_0610,CN,2006-07-10,I32668,MPR; GradWarp; B1 Correction; N3,2006-06-21,0,I26264,"Coreg, Avg, Standardized Image and Voxel Size",2006-07-27,0,36,19,17
+005_S_0929,005_S_0929,AD,2006-11-08,I74608,MPR; GradWarp; B1 Correction; N3,2006-10-02,0,I30256,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-20,0,49,37,12
+005_S_1224,005_S_1224,pMCI,2007-02-13,I60405,MPR; GradWarp; B1 Correction; N3,2007-01-23,0,I40888,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-16,0,24,21,3
+005_S_1341,005_S_1341,AD,2007-04-04,I60416,MPR; GradWarp; B1 Correction; N3,2007-03-07,0,I52245,"Coreg, Avg, Standardized Image and Voxel Size",2007-04-27,0,51,28,23
+005_S_4185,005_S_4185,sMCI,2011-12-08,I258625,MT1; GradWarp; N3m,2011-09-12,2,I262699,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-07,0,25,87,62
+005_S_4707,005_S_4707,AD,2012-06-20,I306746,MT1; GradWarp; N3m,2012-05-15,2,I308604,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-05,0,21,36,15
+005_S_4910,005_S_4910,AD,2012-10-10,I337582,MT1; GradWarp; N3m,2012-09-21,2,I347769,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-19,0,28,19,9
+005_S_5038,005_S_5038,AD,2013-01-03,I351980,MT1; GradWarp; N3m,2012-12-13,2,I355459,"Coreg, Avg, Standardized Image and Voxel Size",2013-01-14,0,32,21,11
+006_S_0484,006_S_0484,CN,2006-09-13,I65565,MPR; GradWarp; B1 Correction; N3,2006-09-13,0,I26338,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-11,0,2,0,2
+006_S_0498,006_S_0498,CN,2006-09-06,I55938,MPR; GradWarp; B1 Correction; N3,2006-09-19,0,I26342,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-06,0,13,13,0
+006_S_0547,006_S_0547,AD,2006-09-21,I75270,MPR; GradWarp; B1 Correction; N3,2006-09-21,0,I26370,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-11,0,10,0,10
+006_S_0653,006_S_0653,AD,2006-10-10,I55947,MPR; GradWarp; B1 Correction; N3,2006-11-14,0,I26358,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-02,0,43,35,8
+006_S_0675,006_S_0675,pMCI,2006-10-18,I67332,MPR; GradWarp; B1 Correction; N3,2006-08-31,0,I28783,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-24,0,54,48,6
+006_S_0731,006_S_0731,CN,2006-09-05,I90847,MPR; GradWarp; B1 Correction; N3,2006-08-28,0,I26378,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-05,0,8,8,0
+006_S_1130,006_S_1130,pMCI,2007-01-04,I55956,MPR; GradWarp; B1 Correction; N3,2006-11-30,0,I35432,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-03,0,34,35,1
+007_S_0101,007_S_0101,pMCI,2006-01-05,I36725,MPR; GradWarp; B1 Correction; N3,2005-12-20,0,I25391,"Coreg, Avg, Standardized Image and Voxel Size",2006-01-11,0,22,16,6
+007_S_0128,007_S_0128,pMCI,2006-02-06,I36639,MPR; GradWarp; B1 Correction; N3,2006-01-16,0,I26418,"Coreg, Avg, Standardized Image and Voxel Size",2006-02-09,0,24,21,3
+007_S_0293,007_S_0293,pMCI,2006-03-28,I36548,MPR; GradWarp; B1 Correction; N3,2006-03-14,0,I26489,"Coreg, Avg, Standardized Image and Voxel Size",2006-03-29,0,15,14,1
+007_S_0316,007_S_0316,AD,2006-04-24,I36568,MPR; GradWarp; B1 Correction; N3,2006-03-29,0,I26493,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-24,0,26,26,0
+007_S_0344,007_S_0344,pMCI,2006-04-20,I36578,MPR; GradWarp; B1 Correction; N3,2006-03-31,0,I26497,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-19,0,19,20,1
+007_S_1339,007_S_1339,AD,2007-03-28,I56318,MPR; GradWarp; B1 Correction; N3,2007-02-22,0,I48054,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-28,0,34,34,0
+007_S_4387,007_S_4387,CN,2011-12-19,I272694,MT1; GradWarp; N3m,2011-12-05,2,I274777,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-19,0,14,14,0
+007_S_4467,007_S_4467,sMCI,2012-02-08,I281397,MT1; GradWarp; N3m,2012-01-23,2,I285203,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-08,0,16,16,0
+007_S_4488,007_S_4488,CN,2012-02-16,I282674,MT1; GradWarp; N3m,2012-01-31,2,I287171,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-16,0,16,16,0
+007_S_4516,007_S_4516,CN,2012-03-05,I285469,MT1; GradWarp; N3m,2012-02-13,2,I288951,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-27,0,14,21,7
+007_S_4568,007_S_4568,AD,2012-03-19,I394747,MT1; GradWarp; N3m,2012-03-01,2,I291627,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-19,0,18,18,0
+007_S_4611,007_S_4611,sMCI,2012-04-09,I295877,MT1; GradWarp; N3m,2012-03-28,2,I297504,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-09,0,12,12,0
+007_S_4620,007_S_4620,CN,2012-04-18,I296298,MT1; GradWarp; N3m,2012-03-28,2,I300305,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-16,0,19,21,2
+007_S_4911,007_S_4911,AD,2012-09-10,I331714,MT1; GradWarp; N3m,2012-08-30,2,I336281,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-10,0,11,11,0
+007_S_5196,007_S_5196,AD,2013-06-27,I377762,MT1; GradWarp; N3m,2013-06-03,2,I378496,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-13,0,10,24,14
+009_S_0862,009_S_0862,CN,2006-10-04,I121227,MPR; GradWarp; N3,2006-09-19,9,I27129,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-04,0,15,15,0
+009_S_1354,009_S_1354,AD,2007-04-16,I60438,MPR; GradWarp; N3,2007-03-06,9,I47365,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-22,0,16,41,25
+009_S_4324,009_S_4324,pMCI,2011-12-02,I272728,MT1; GradWarp; N3m,2011-11-01,2,I269760,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-16,0,15,31,16
+009_S_4530,009_S_4530,pMCI,2012-02-27,I285480,MT1; GradWarp; N3m,2012-02-14,2,I287877,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-29,0,15,13,2
+009_S_4612,009_S_4612,CN,2012-04-16,I295885,MT1; GradWarp; N3m,2012-03-29,2,I298485,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-18,0,20,18,2
+009_S_4958,009_S_4958,pMCI,2012-10-12,I339153,MT1; GradWarp; N3m,2012-10-04,2,I342081,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-22,0,18,8,10
+009_S_5000,009_S_5000,sMCI,2012-11-19,I349550,MT1; GradWarp; N3m,2012-10-26,2,I347939,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-26,0,31,24,7
+009_S_5027,009_S_5027,AD,2013-01-10,I353184,MT1; GradWarp; N3m,2012-11-29,2,I357344,"Coreg, Avg, Standardized Image and Voxel Size",2013-01-11,0,43,42,1
+009_S_5037,009_S_5037,AD,2013-02-21,I358355,MT1; GradWarp; N3m,2013-01-08,2,I358751,"Coreg, Avg, Standardized Image and Voxel Size",2013-02-08,0,31,44,13
+009_S_5125,009_S_5125,CN,2013-04-11,I414458,MT1; GradWarp; N3m,2013-03-28,2,I367270,"Coreg, Avg, Standardized Image and Voxel Size",2013-04-10,0,13,14,1
+009_S_5147,009_S_5147,CN,2013-05-02,I432902,MT1; GradWarp; N3m,2013-04-17,2,I372768,"Coreg, Avg, Standardized Image and Voxel Size",2013-05-01,0,14,15,1
+009_S_5176,009_S_5176,CN,2013-06-12,I432911,MT1; GradWarp; N3m,2013-05-15,2,I376526,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-10,0,26,28,2
+009_S_5224,009_S_5224,AD,2013-07-26,I414460,MT1; GradWarp; N3m,2013-07-11,2,I384700,"Coreg, Avg, Standardized Image and Voxel Size",2013-08-05,0,25,15,10
+009_S_5252,009_S_5252,AD,2013-08-15,I414462,MT1; GradWarp; N3m,2013-07-18,2,I385834,"Coreg, Avg, Standardized Image and Voxel Size",2013-08-15,0,28,28,0
+011_S_0861,011_S_0861,pMCI,2006-10-05,I35512,MPR; GradWarp; B1 Correction; N3,2006-09-27,0,I27018,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-17,0,20,8,12
+011_S_1282,011_S_1282,pMCI,2007-02-26,I62635,MPR; GradWarp; B1 Correction; N3,2007-02-09,0,I44538,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-12,0,31,17,14
+011_S_4075,011_S_4075,CN,2011-06-20,I241381,MT1; GradWarp; N3m,2011-06-10,2,I241700,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-20,0,10,10,0
+011_S_4120,011_S_4120,CN,2011-08-10,I248611,MT1; GradWarp; N3m,2011-07-15,2,I250312,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-28,0,13,26,13
+011_S_4222,011_S_4222,CN,2011-10-13,I258684,MT1; GradWarp; N3m,2011-09-14,2,I259646,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-26,0,12,29,17
+011_S_4235,011_S_4235,sMCI,2011-10-19,I260231,MT1; GradWarp; N3m,2011-09-19,2,I260806,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-07,0,18,30,12
+011_S_4366,011_S_4366,pMCI,2011-12-01,I267763,MT1; GradWarp; N3m,2011-11-14,2,I269486,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-21,0,7,17,10
+011_S_4827,011_S_4827,AD,2012-08-02,I315322,MT1; GradWarp; N3m,2012-07-02,2,I319749,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-19,0,17,31,14
+011_S_4906,011_S_4906,AD,2012-09-05,I331853,MT1; GradWarp; N3m,2012-08-13,2,I334277,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-06,0,24,23,1
+011_S_4912,011_S_4912,AD,2012-09-14,I327035,MT1; GradWarp; N3m,2012-08-22,2,I336289,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-14,0,23,23,0
+011_S_4949,011_S_4949,AD,2012-10-23,I337435,MT1; GradWarp; N3m,2012-09-19,2,I340489,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-10,0,21,34,13
+013_S_0325,013_S_0325,pMCI,2006-06-27,I54664,MPR; GradWarp; B1 Correction; N3,2006-04-19,0,I26787,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-16,0,58,69,11
+013_S_0502,013_S_0502,CN,2006-09-25,I51137,MPR; GradWarp; B1 Correction; N3,2006-07-25,0,I26790,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-07,0,44,62,18
+013_S_0575,013_S_0575,CN,2006-09-26,I51155,MPR; GradWarp; B1 Correction; N3,2006-08-14,0,I28841,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-18,0,35,43,8
+013_S_0699,013_S_0699,AD,2006-11-26,I62644,MPR; GradWarp; B1 Correction; N3,2006-08-28,0,I30069,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-01,0,65,90,25
+013_S_0860,013_S_0860,pMCI,2006-10-16,I51532,MPR; GradWarp; B1 Correction; N3,2006-09-21,0,I30147,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-11,0,20,25,5
+013_S_1161,013_S_1161,AD,2007-01-10,I51484,MPR; GradWarp; B1 Correction; N3,2006-12-20,0,I35442,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-04,0,15,21,6
+013_S_1205,013_S_1205,AD,2007-02-08,I51541,MPR; GradWarp; B1 Correction; N3,2007-01-11,0,I38254,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-26,0,15,28,13
+014_S_4039,014_S_4039,AD,2011-07-01,I241346,MT1; GradWarp; N3m,2011-06-02,2,I246827,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-15,0,43,29,14
+014_S_4058,014_S_4058,pMCI,2011-06-16,I238666,MT1; GradWarp; N3m,2011-05-26,2,I246831,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-20,0,55,21,34
+014_S_4079,014_S_4079,pMCI,2011-07-06,I242899,MT1; GradWarp; N3m,2011-06-16,2,I255912,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-12,0,88,20,68
+014_S_4080,014_S_4080,CN,2011-08-25,I242900,MT1; GradWarp; N3m,2011-06-16,2,I252755,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-19,0,64,70,6
+014_S_4093,014_S_4093,CN,2011-08-02,I296282,MT1; GradWarp; N3m,2011-07-07,2,I247741,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-28,0,21,26,5
+014_S_4263,014_S_4263,pMCI,2011-10-25,I261065,MT1; GradWarp; N3m,2011-10-06,2,I265133,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-07,0,32,19,13
+014_S_4401,014_S_4401,CN,2011-12-19,I270063,MT1; GradWarp; N3m,2011-12-02,2,I275671,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-22,0,20,17,3
+014_S_4576,014_S_4576,CN,2012-04-02,I290964,MT1; GradWarp; N3m,2012-03-08,2,I296019,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-03,0,26,25,1
+014_S_4615,014_S_4615,AD,2012-05-08,I295883,MT1; GradWarp; N3m,2012-03-29,2,I301225,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-30,0,32,40,8
+014_S_4668,014_S_4668,pMCI,2012-05-16,I300954,MT1; GradWarp; N3m,2012-04-26,2,I306200,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-21,0,25,20,5
+016_S_0991,016_S_0991,AD,2006-11-21,I40789,MPR; GradWarp; B1 Correction; N3,2006-11-01,0,I44542,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-07,0,126,20,106
+016_S_1263,016_S_1263,AD,2007-03-15,I64617,MPR; GradWarp; B1 Correction; N3,2007-02-27,0,I47402,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-27,0,28,16,12
+016_S_4009,016_S_4009,AD,2011-06-28,I241397,MT1; GradWarp; N3m,2011-06-18,2,I245837,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-11,0,23,10,13
+016_S_4097,016_S_4097,CN,2011-08-01,I421241,MT1; GradWarp; N3m,2011-07-05,2,I249299,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-04,0,30,27,3
+016_S_4353,016_S_4353,AD,2012-01-24,I270023,MT1; GradWarp; N3m,2011-11-18,2,I282614,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-31,0,74,67,7
+016_S_4583,016_S_4583,AD,2012-07-05,I294869,MT1; GradWarp; N3m,2012-03-29,2,I312936,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-05,0,68,98,30
+016_S_4584,016_S_4584,pMCI,2012-04-12,I295865,MT1; GradWarp; N3m,2012-03-27,2,I301470,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-18,0,22,16,6
+016_S_4591,016_S_4591,AD,2012-04-05,I293689,MT1; GradWarp; N3m,2012-03-22,2,I296596,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-06,0,15,14,1
+016_S_4688,016_S_4688,CN,2012-08-08,I312727,MT1; GradWarp; N3m,2012-06-11,2,I317215,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-03,0,22,58,36
+016_S_4887,016_S_4887,AD,2012-11-02,I326634,MT1; GradWarp; N3m,2012-08-21,2,I338522,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-01,0,41,73,32
+016_S_4902,016_S_4902,pMCI,2012-10-22,I326636,MT1; GradWarp; N3m,2012-08-21,2,I337879,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-27,0,37,62,25
+016_S_4951,016_S_4951,CN,2012-12-26,I338586,MT1; GradWarp; N3m,2012-10-01,2,I347797,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-20,0,50,86,36
+016_S_4952,016_S_4952,CN,2012-12-26,I338584,MT1; GradWarp; N3m,2012-10-01,2,I347805,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-20,0,50,86,36
+016_S_5031,016_S_5031,pMCI,2013-06-25,I369717,MT1; GradWarp; N3m,2013-02-13,2,I366925,"Coreg, Avg, Standardized Image and Voxel Size",2013-04-11,0,57,132,75
+016_S_5057,016_S_5057,AD,2013-05-22,I369719,MT1; GradWarp; N3m,2013-02-25,2,I365855,"Coreg, Avg, Standardized Image and Voxel Size",2013-04-05,0,39,86,47
+016_S_5251,016_S_5251,AD,2013-10-24,I388021,MT1; GradWarp; N3m,2013-08-09,2,I395406,"Coreg, Avg, Standardized Image and Voxel Size",2013-10-18,0,70,76,6
+020_S_0097,020_S_0097,CN,2006-03-16,I64045,MPR; GradWarp; B1 Correction; N3,2006-01-12,0,I31013,"Coreg, Avg, Standardized Image and Voxel Size",2006-02-27,0,46,63,17
+020_S_0213,020_S_0213,AD,2006-04-10,I60598,MPR; GradWarp; B1 Correction; N3,2006-03-22,0,I31024,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-13,0,22,19,3
+020_S_5140,020_S_5140,CN,2013-06-07,I369385,MT1; GradWarp; N3m,2013-04-22,2,I379201,"Coreg, Avg, Standardized Image and Voxel Size",2013-05-17,0,25,46,21
+020_S_5203,020_S_5203,CN,2013-09-18,I377764,MT1; GradWarp; N3m,2013-06-15,2,I384129,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-21,0,6,95,89
+021_S_0141,021_S_0141,pMCI,2006-03-01,I33399,MPR; GradWarp; N3,2006-01-23,9,I27166,"Coreg, Avg, Standardized Image and Voxel Size",2006-02-22,0,30,37,7
+021_S_0231,021_S_0231,pMCI,2006-03-23,I33425,MPR; GradWarp; N3,2006-02-28,9,I27273,"Coreg, Avg, Standardized Image and Voxel Size",2006-03-16,0,16,23,7
+021_S_0343,021_S_0343,AD,2006-05-05,I33445,MPR; GradWarp; N3,2006-04-06,9,I27286,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-25,0,19,29,10
+021_S_0642,021_S_0642,AD,2006-08-01,I33453,MPR; GradWarp; N3,2006-06-28,9,I27302,"Coreg, Avg, Standardized Image and Voxel Size",2006-07-26,0,28,34,6
+021_S_0647,021_S_0647,CN,2006-08-07,I33458,MPR; GradWarp; N3,2006-06-29,9,I27311,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-02,0,34,39,5
+021_S_1109,021_S_1109,AD,2007-01-11,I62694,MPR; GradWarp; N3,2006-12-05,9,I36028,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-10,0,36,37,1
+021_S_4276,021_S_4276,CN,2011-10-21,I261059,MT1; GradWarp; N3m,2011-10-07,2,I266960,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-10,0,34,14,20
+021_S_4335,021_S_4335,CN,2011-11-30,I267759,MT1; GradWarp; N3m,2011-11-11,2,I271942,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-30,0,19,19,0
+021_S_4402,021_S_4402,pMCI,2011-12-19,I272816,MT1; GradWarp; N3m,2011-12-14,2,I280211,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-09,0,26,5,21
+021_S_4421,021_S_4421,CN,2012-01-11,I274516,MT1; GradWarp; N3m,2011-12-20,2,I280941,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-11,0,22,22,0
+021_S_4558,021_S_4558,CN,2012-03-26,I312842,MT1; GradWarp; N3m,2012-03-02,2,I296503,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-29,0,27,24,3
+021_S_4659,021_S_4659,pMCI,2012-04-30,I300293,MT1; GradWarp; N3m,2012-04-16,2,I301916,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-02,0,16,14,2
+021_S_4718,021_S_4718,AD,2012-05-29,I306699,MT1; GradWarp; N3m,2012-05-16,2,I310735,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-29,0,13,13,0
+021_S_4744,021_S_4744,sMCI,2012-06-11,I312651,MT1; GradWarp; N3m,2012-05-31,2,I310743,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-11,0,11,11,0
+021_S_4857,021_S_4857,pMCI,2012-08-13,I321451,MT1; GradWarp; N3m,2012-07-24,2,I325139,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-13,0,20,20,0
+021_S_4924,021_S_4924,AD,2012-09-24,I335382,MT1; GradWarp; N3m,2012-09-05,2,I338918,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-27,0,22,19,3
+021_S_5129,021_S_5129,CN,2013-04-03,I370011,MT1; GradWarp; N3m,2013-03-27,2,I369273,"Coreg, Avg, Standardized Image and Voxel Size",2013-04-18,0,22,7,15
+021_S_5177,021_S_5177,CN,2013-06-06,I374610,MT1; GradWarp; N3m,2013-05-17,2,I378771,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-12,0,26,20,6
+021_S_5194,021_S_5194,CN,2013-06-09,I377010,MT1; GradWarp; N3m,2013-05-29,2,I378779,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-13,0,15,11,4
+021_S_5236,021_S_5236,CN,2013-07-11,I379936,MT1; GradWarp; N3m,2013-06-27,2,I383855,"Coreg, Avg, Standardized Image and Voxel Size",2013-07-22,0,25,14,11
+022_S_0014,022_S_0014,CN,2005-11-04,I59374,MPR; GradWarp; B1 Correction; N3,2005-09-29,0,I28901,"Coreg, Avg, Standardized Image and Voxel Size",2005-10-25,0,26,36,10
+022_S_0096,022_S_0096,CN,2006-02-06,I59455,MPR; GradWarp; B1 Correction; N3,2006-01-18,0,I28921,"Coreg, Avg, Standardized Image and Voxel Size",2006-02-28,0,41,19,22
+022_S_0130,022_S_0130,CN,2006-02-07,I59523,MPR; GradWarp; B1 Correction; N3,2006-01-23,0,I28928,"Coreg, Avg, Standardized Image and Voxel Size",2006-02-21,0,29,15,14
+022_S_0219,022_S_0219,AD,2006-04-04,I59532,MPR; GradWarp; B1 Correction; N3,2006-03-17,0,I28932,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-09,0,84,18,66
+022_S_0543,022_S_0543,AD,2006-06-08,I59542,MPR; GradWarp; B1 Correction; N3,2006-05-22,0,I28936,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-19,0,28,17,11
+022_S_0961,022_S_0961,sMCI,2007-01-12,I59596,MPR; GradWarp; B1 Correction; N3,2006-10-20,0,I31036,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-16,0,27,84,57
+022_S_1351,022_S_1351,pMCI,2007-03-16,I59614,MPR; GradWarp; B1 Correction; N3,2007-03-16,0,I49846,"Coreg, Avg, Standardized Image and Voxel Size",2007-04-04,0,19,0,19
+022_S_1394,022_S_1394,pMCI,2007-06-11,I68077,MPR; GradWarp; B1 Correction; N3,2007-05-29,0,I60361,"Coreg, Avg, Standardized Image and Voxel Size",2007-07-02,0,34,13,21
+022_S_4173,022_S_4173,CN,2011-10-04,I258657,MT1; GradWarp; N3m,2011-09-13,2,I261893,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-03,0,20,21,1
+022_S_4196,022_S_4196,CN,2011-10-04,I417074,MT1; GradWarp; N3m,2011-09-13,2,I262027,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-14,0,31,21,10
+022_S_4266,022_S_4266,CN,2011-11-30,I267771,MT1; GradWarp; N3m,2011-11-15,2,I276947,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-20,0,35,15,20
+022_S_4291,022_S_4291,CN,2012-01-24,I270056,MT1; GradWarp; N3m,2011-11-22,2,I280693,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-19,0,58,63,5
+022_S_4320,022_S_4320,CN,2011-12-14,I283918,MT1; GradWarp; N3m,2011-11-09,2,I273895,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-09,0,30,35,5
+023_S_4020,023_S_4020,CN,2011-06-28,I233460,MT1; GradWarp; N3m,2011-05-03,2,I242607,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-23,0,51,56,5
+023_S_4035,023_S_4035,pMCI,2011-09-21,I248665,MT1; GradWarp; N3m,2011-07-28,2,I257594,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-22,0,56,55,1
+023_S_4122,023_S_4122,sMCI,2011-10-28,I254783,MT1; GradWarp; N3m,2011-08-26,2,I263194,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-27,0,62,63,1
+023_S_4164,023_S_4164,CN,2011-12-13,I254819,MT1; GradWarp; N3m,2011-08-30,2,I271956,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-29,0,91,105,14
+023_S_4243,023_S_4243,pMCI,2012-02-29,I267751,MT1; GradWarp; N3m,2011-11-09,2,I286569,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-23,0,106,112,6
+023_S_4448,023_S_4448,CN,2012-02-21,I281430,MT1; GradWarp; N3m,2012-01-26,2,I285965,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-16,0,21,26,5
+023_S_4501,023_S_4501,AD,2012-05-21,I293685,MT1; GradWarp; N3m,2012-03-22,2,I306216,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-17,0,56,60,4
+023_S_4502,023_S_4502,pMCI,2012-04-20,I290954,MT1; GradWarp; N3m,2012-03-06,2,I300121,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-19,0,44,45,1
+023_S_4796,023_S_4796,pMCI,2012-10-22,I326639,MT1; GradWarp; N3m,2012-08-22,2,I339791,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-04,0,43,61,18
+023_S_5120,023_S_5120,AD,2013-06-20,I374612,MT1; GradWarp; N3m,2013-05-15,2,I378508,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-20,0,36,36,0
+023_S_5241,023_S_5241,AD,2013-11-08,I388415,MT1; GradWarp; N3m,2013-08-09,2,I396598,"Coreg, Avg, Standardized Image and Voxel Size",2013-10-25,0,77,91,14
+024_S_1307,024_S_1307,AD,2007-03-06,I63414,MPR; GradWarp; B1 Correction; N3,2007-02-23,0,I44957,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-12,0,17,11,6
+024_S_1393,024_S_1393,pMCI,2007-04-24,I65270,MPR; GradWarp; B1 Correction; N3,2007-03-13,0,I50636,"Coreg, Avg, Standardized Image and Voxel Size",2007-04-23,0,41,42,1
+024_S_4084,024_S_4084,CN,2011-08-03,I241394,MT1; GradWarp; N3m,2011-06-16,2,I251255,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-01,0,46,48,2
+024_S_4158,024_S_4158,CN,2011-08-29,I254754,MT1; GradWarp; N3m,2011-08-11,2,I254397,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-31,0,20,18,2
+024_S_4169,024_S_4169,sMCI,2011-09-06,I254748,MT1; GradWarp; N3m,2011-08-12,2,I254883,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-29,0,17,25,8
+024_S_4223,024_S_4223,AD,2011-10-03,I258623,MT1; GradWarp; N3m,2011-09-12,2,I259155,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-26,0,14,21,7
+024_S_4280,024_S_4280,AD,2011-11-23,I263676,MT1; GradWarp; N3m,2011-10-18,2,I265271,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-28,0,10,36,26
+024_S_4674,024_S_4674,sMCI,2012-05-24,I300950,MT1; GradWarp; N3m,2012-04-20,2,I304085,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-14,0,24,34,10
+024_S_4905,024_S_4905,AD,2012-09-17,I326594,MT1; GradWarp; N3m,2012-08-16,2,I332378,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-07,0,22,32,10
+024_S_5054,024_S_5054,AD,2013-01-28,I353186,MT1; GradWarp; N3m,2012-12-20,2,I353845,"Coreg, Avg, Standardized Image and Voxel Size",2013-01-04,0,15,39,24
+024_S_5290,024_S_5290,CN,2013-10-04,I391092,MT1; GradWarp; N3m,2013-09-06,2,I392087,"Coreg, Avg, Standardized Image and Voxel Size",2013-09-24,0,18,28,10
+027_S_0074,027_S_0074,CN,2006-01-10,I34315,MPR; GradWarp; B1 Correction; N3,2005-12-09,0,I28997,"Coreg, Avg, Standardized Image and Voxel Size",2006-01-13,0,35,32,3
+027_S_0120,027_S_0120,CN,2006-02-16,I34331,MPR; GradWarp; B1 Correction; N3,2006-02-06,0,I29005,"Coreg, Avg, Standardized Image and Voxel Size",2006-02-22,0,16,10,6
+027_S_0256,027_S_0256,pMCI,2006-04-05,I34149,MPR; GradWarp; B1 Correction; N3,2006-03-21,0,I29013,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-12,0,22,15,7
+027_S_0461,027_S_0461,pMCI,2006-06-16,I34230,MPR; GradWarp; B1 Correction; N3,2006-06-02,0,I29021,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-26,0,24,14,10
+027_S_0850,027_S_0850,AD,2006-09-20,I48995,MPR; GradWarp; B1 Correction; N3,2006-09-06,0,I29037,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-27,0,21,14,7
+027_S_1254,027_S_1254,AD,2007-02-12,I47227,MPR; GradWarp; B1 Correction; N3,2007-01-31,0,I41398,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-21,0,21,12,9
+027_S_4729,027_S_4729,pMCI,2012-06-04,I421237,MT1; GradWarp; N3m,2012-05-22,2,I313240,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-15,0,24,13,11
+027_S_4757,027_S_4757,pMCI,2012-06-14,I312676,MT1; GradWarp; N3m,2012-06-07,2,I313248,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-19,0,12,7,5
+027_S_4801,027_S_4801,AD,2012-07-16,I321464,MT1; GradWarp; N3m,2012-07-02,2,I320110,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-19,0,17,14,3
+027_S_4802,027_S_4802,AD,2012-07-26,I321466,MT1; GradWarp; N3m,2012-07-22,2,I324446,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-30,0,8,4,4
+027_S_4804,027_S_4804,sMCI,2012-07-24,I321468,MT1; GradWarp; N3m,2012-07-16,2,I321319,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-31,0,15,8,7
+027_S_4869,027_S_4869,sMCI,2012-09-10,I326588,MT1; GradWarp; N3m,2012-08-19,2,I339493,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-21,0,33,22,11
+027_S_4926,027_S_4926,sMCI,2012-09-25,I337590,MT1; GradWarp; N3m,2012-09-20,2,I344086,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-28,0,8,5,3
+027_S_4936,027_S_4936,pMCI,2012-10-01,I337580,MT1; GradWarp; N3m,2012-09-21,2,I345458,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-08,0,17,10,7
+027_S_4943,027_S_4943,pMCI,2012-10-04,I337442,MT1; GradWarp; N3m,2012-09-18,2,I343408,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-09,0,21,16,5
+027_S_4962,027_S_4962,AD,2012-10-15,I339186,MT1; GradWarp; N3m,2012-10-05,2,I344216,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-18,0,13,10,3
+027_S_4964,027_S_4964,AD,2012-10-17,I358249,MT1; GradWarp; N3m,2012-10-06,2,I345478,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-22,0,16,11,5
+027_S_4966,027_S_4966,sMCI,2012-10-18,I340507,MT1; GradWarp; N3m,2012-10-13,2,I344224,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-29,0,16,5,11
+029_S_0836,029_S_0836,AD,2006-09-07,I65012,MPR; GradWarp; B1 Correction; N3,2006-08-23,0,I58409,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-15,0,23,15,8
+029_S_0845,029_S_0845,CN,2006-09-21,I64866,MPR; GradWarp; B1 Correction; N3,2006-09-12,0,I57690,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-02,0,20,9,11
+029_S_0866,029_S_0866,CN,2006-10-05,I65610,MPR; GradWarp; B1 Correction; N3,2006-09-13,0,I66351,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-14,0,62,22,40
+029_S_1056,029_S_1056,AD,2006-12-13,I60736,MPR; GradWarp; B1 Correction; N3,2006-11-27,0,I58664,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-13,0,16,16,0
+029_S_1073,029_S_1073,pMCI,2006-12-07,I65021,MPR; GradWarp; B1 Correction; N3,2006-11-21,0,I58674,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-08,0,17,16,1
+029_S_1218,029_S_1218,sMCI,2007-02-08,I67388,MPR; GradWarp; B1 Correction; N3,2007-01-23,0,I44856,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-20,0,28,16,12
+029_S_1384,029_S_1384,sMCI,2007-04-05,I64902,MPR; GradWarp; B1 Correction; N3,2007-03-28,0,I49560,"Coreg, Avg, Standardized Image and Voxel Size",2007-04-09,0,12,8,4
+029_S_4279,029_S_4279,CN,2012-01-19,I267755,MT1; GradWarp; N3m,2011-11-09,2,I282446,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-27,0,79,71,8
+029_S_4384,029_S_4384,CN,2012-02-09,I274510,MT1; GradWarp; N3m,2011-12-20,2,I312944,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-25,0,157,51,106
+029_S_4585,029_S_4585,CN,2012-05-24,I300942,MT1; GradWarp; N3m,2012-04-17,2,I312972,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-19,0,63,37,26
+029_S_5158,029_S_5158,CN,2013-08-08,I379940,MT1; GradWarp; N3m,2013-06-21,2,I387239,"Coreg, Avg, Standardized Image and Voxel Size",2013-08-20,0,60,48,12
+031_S_0618,031_S_0618,CN,2006-08-10,I67106,MPR; GradWarp; N3,2006-06-06,9,I27361,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-16,0,71,65,6
+032_S_4386,032_S_4386,CN,2012-02-01,I273518,MT1; GradWarp; N3m,2011-12-13,2,I281583,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-19,0,37,50,13
+032_S_4429,032_S_4429,CN,2012-03-02,I274506,MT1; GradWarp; N3m,2011-12-22,2,I285060,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-09,0,49,71,22
+032_S_4755,032_S_4755,AD,2012-08-01,I314561,MT1; GradWarp; N3m,2012-07-02,2,I324530,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-09,0,7,30,23
+032_S_4823,032_S_4823,pMCI,2012-08-01,I322260,MT1; GradWarp; N3m,2012-07-05,2,I321331,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-16,0,11,27,16
+032_S_4921,032_S_4921,CN,2012-10-24,I335406,MT1; GradWarp; N3m,2012-09-06,2,I341161,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-28,0,22,48,26
+033_S_0511,033_S_0511,pMCI,2006-06-07,I42239,MPR; GradWarp; B1 Correction; N3,2006-06-01,0,I27533,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-19,0,18,6,12
+033_S_0513,033_S_0513,pMCI,2006-06-05,I42257,MPR; GradWarp; B1 Correction; N3,2006-05-18,0,I27537,"Coreg, Avg, Standardized Image and Voxel Size",2006-07-20,0,63,18,45
+033_S_0567,033_S_0567,pMCI,2006-06-05,I42365,MPR; GradWarp; B1 Correction; N3,2006-05-17,0,I27541,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-19,0,33,19,14
+033_S_0723,033_S_0723,pMCI,2006-08-03,I42383,MPR; GradWarp; B1 Correction; N3,2006-07-14,0,I27554,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-08,0,25,20,5
+033_S_0734,033_S_0734,CN,2006-08-04,I42433,MPR; GradWarp; B1 Correction; N3,2006-07-18,0,I27561,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-09,0,22,17,5
+033_S_0889,033_S_0889,AD,2006-10-09,I51624,MPR; GradWarp; B1 Correction; N3,2006-09-25,0,I28893,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-24,0,29,14,15
+033_S_0906,033_S_0906,pMCI,2006-10-11,I42467,MPR; GradWarp; B1 Correction; N3,2006-09-25,0,I27570,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-23,0,28,16,12
+033_S_1281,033_S_1281,AD,2007-03-02,I54765,MPR; GradWarp; B1 Correction; N3,2007-02-07,0,I48071,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-30,0,51,23,28
+033_S_1283,033_S_1283,AD,2007-02-26,I54784,MPR; GradWarp; B1 Correction; N3,2007-02-07,0,I44567,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-08,0,29,19,10
+033_S_1285,033_S_1285,AD,2007-02-26,I51587,MPR; GradWarp; B1 Correction; N3,2007-02-06,0,I45137,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-15,0,37,20,17
+033_S_4177,033_S_4177,CN,2011-09-07,I254809,MT1; GradWarp; N3m,2011-08-26,2,I256945,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-09,0,14,12,2
+033_S_4505,033_S_4505,CN,2012-02-15,I283946,MT1; GradWarp; N3m,2012-02-06,2,I285973,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-16,0,10,9,1
+033_S_4508,033_S_4508,CN,2012-02-15,I285123,MT1; GradWarp; N3m,2012-02-07,2,I287179,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-28,0,21,8,13
+033_S_5013,033_S_5013,AD,2012-11-28,I349885,MT1; GradWarp; N3m,2012-11-07,2,I347845,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-19,0,12,21,9
+033_S_5017,033_S_5017,AD,2012-11-28,I349897,MT1; GradWarp; N3m,2012-11-08,2,I347896,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-20,0,12,20,8
+033_S_5087,033_S_5087,AD,2013-03-11,I363278,MT1; GradWarp; N3m,2013-02-14,2,I364763,"Coreg, Avg, Standardized Image and Voxel Size",2013-03-26,0,40,25,15
+033_S_5198,033_S_5198,CN,2013-06-18,I377083,MT1; GradWarp; N3m,2013-06-03,2,I379203,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-28,0,25,15,10
+033_S_5235,033_S_5235,CN,2013-07-23,I379955,MT1; GradWarp; N3m,2013-06-27,2,I384137,"Coreg, Avg, Standardized Image and Voxel Size",2013-07-23,0,26,26,0
+033_S_5259,033_S_5259,CN,2013-08-26,I388433,MT1; GradWarp; N3m,2013-07-25,2,I389070,"Coreg, Avg, Standardized Image and Voxel Size",2013-08-23,0,29,32,3
+035_S_0997,035_S_0997,pMCI,2007-01-12,I62907,MPR; GradWarp; B1 Correction; N3,2006-11-29,0,I36865,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-16,0,48,44,4
+035_S_4082,035_S_4082,CN,2011-07-12,I296308,MT1; GradWarp; N3m,2011-06-28,2,I248342,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-05,0,7,14,7
+035_S_4414,035_S_4414,pMCI,2012-06-14,I291903,MT1; GradWarp; N3m,2012-03-19,2,I300390,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-06,0,18,87,69
+035_S_4464,035_S_4464,CN,2012-06-14,I281845,MT1; GradWarp; N3m,2012-01-25,2,I286703,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-17,0,23,141,118
+035_S_4783,035_S_4783,AD,2012-11-30,I315324,MT1; GradWarp; N3m,2012-07-02,2,I338992,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-07,0,67,151,84
+035_S_4784,035_S_4784,pMCI,2012-11-30,I313649,MT1; GradWarp; N3m,2012-06-25,2,I334281,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-09,0,45,158,113
+036_S_0672,036_S_0672,CN,2006-08-01,I36937,MPR; GradWarp; B1 Correction; N3,2006-07-21,0,I27762,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-14,0,24,11,13
+036_S_0673,036_S_0673,sMCI,2006-08-01,I36948,MPR; GradWarp; B1 Correction; N3,2006-07-21,0,I27766,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-14,0,24,11,13
+036_S_0760,036_S_0760,AD,2006-09-13,I38651,MPR; GradWarp; B1 Correction; N3,2006-08-25,0,I27774,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-13,0,19,19,0
+036_S_0813,036_S_0813,CN,2006-09-13,I36978,MPR; GradWarp; B1 Correction; N3,2006-08-25,0,I27787,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-13,0,19,19,0
+036_S_0976,036_S_0976,pMCI,2007-01-09,I65090,MPR; GradWarp; B1 Correction; N3,2006-12-12,0,I36202,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-09,0,28,28,0
+036_S_1001,036_S_1001,AD,2006-11-29,I38660,MPR; GradWarp; B1 Correction; N3,2006-11-20,0,I31040,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-29,0,9,9,0
+036_S_1023,036_S_1023,CN,2007-01-05,I65099,MPR; GradWarp; B1 Correction; N3,2006-12-20,0,I35447,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-05,0,16,16,0
+036_S_1135,036_S_1135,pMCI,2007-01-15,I65108,MPR; GradWarp; B1 Correction; N3,2006-12-27,0,I36869,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-15,0,19,19,0
+036_S_1240,036_S_1240,pMCI,2007-02-26,I65117,MPR; GradWarp; B1 Correction; N3,2007-02-13,0,I44571,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-26,0,13,13,0
+036_S_5112,036_S_5112,AD,2013-05-14,I371899,MT1; GradWarp; N3m,2013-05-06,2,I373713,"Coreg, Avg, Standardized Image and Voxel Size",2013-05-13,0,7,8,1
+036_S_5210,036_S_5210,AD,2013-06-20,I377052,MT1; GradWarp; N3m,2013-06-12,2,I378512,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-20,0,8,8,0
+036_S_5248,036_S_5248,CN,2013-08-01,I384098,MT1; GradWarp; N3m,2013-07-18,2,I385217,"Coreg, Avg, Standardized Image and Voxel Size",2013-08-08,0,21,14,7
+036_S_5271,036_S_5271,CN,2013-08-06,I388447,MT1; GradWarp; N3m,2013-08-01,2,I385726,"Coreg, Avg, Standardized Image and Voxel Size",2013-08-06,0,5,5,0
+036_S_5283,036_S_5283,CN,2013-09-06,I388449,MT1; GradWarp; N3m,2013-08-21,2,I389846,"Coreg, Avg, Standardized Image and Voxel Size",2013-09-06,0,16,16,0
+037_S_0327,037_S_0327,CN,2006-05-31,I79731,MPR; GradWarp; N3,2006-04-19,9,I27703,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-10,0,21,42,21
+037_S_0377,037_S_0377,sMCI,2006-06-18,I83093,MPR; GradWarp; N3,2006-05-02,9,I27705,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-09,0,38,47,9
+037_S_0627,037_S_0627,AD,2006-08-17,I79830,MPR; GradWarp; N3,2006-07-06,9,I27713,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-14,0,39,42,3
+037_S_1421,037_S_1421,sMCI,2007-09-14,I79947,MPR; GradWarp; N3,2007-08-27,9,I71919,"Coreg, Avg, Standardized Image and Voxel Size",2007-09-04,0,8,18,10
+037_S_4001,037_S_4001,AD,2011-03-10,I297310,MT1; GradWarp; N3m,2011-02-21,2,I242615,"Coreg, Avg, Standardized Image and Voxel Size",2011-03-07,0,14,17,3
+037_S_4015,037_S_4015,pMCI,2011-05-03,I228531,MT1; GradWarp; N3m,2011-04-05,2,I232196,"Coreg, Avg, Standardized Image and Voxel Size",2011-04-29,0,24,28,4
+037_S_4030,037_S_4030,pMCI,2011-06-15,I234654,MT1; GradWarp; N3m,2011-05-05,2,I247941,"Coreg, Avg, Standardized Image and Voxel Size",2011-05-25,0,20,41,21
+037_S_4146,037_S_4146,sMCI,2011-10-12,I255435,MT1; GradWarp; N3m,2011-09-07,2,I256389,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-14,0,7,35,28
+037_S_4302,037_S_4302,sMCI,2012-01-17,I263752,MT1; GradWarp; N3m,2011-10-26,2,I271468,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-12,0,47,83,36
+037_S_4308,037_S_4308,CN,2012-03-05,I286641,MT1; GradWarp; N3m,2012-02-20,2,I289797,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-27,0,7,14,7
+037_S_4410,037_S_4410,CN,2012-01-17,I274518,MT1; GradWarp; N3m,2011-12-19,2,I278416,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-13,0,25,29,4
+037_S_4770,037_S_4770,AD,2012-08-08,I322292,MT1; GradWarp; N3m,2012-07-09,2,I319765,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-20,0,11,30,19
+037_S_4879,037_S_4879,AD,2012-09-26,I335394,MT1; GradWarp; N3m,2012-09-06,2,I337233,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-26,0,20,20,0
+041_S_0549,041_S_0549,pMCI,2006-08-11,I39494,MPR; GradWarp; B1 Correction; N3,2006-06-13,0,I27817,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-11,0,59,59,0
+041_S_1002,041_S_1002,CN,2006-12-06,I65219,MPR; GradWarp; B1 Correction; N3,2006-12-08,0,I36060,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-09,0,32,2,34
+041_S_1010,041_S_1010,pMCI,2007-02-07,I65229,MPR; GradWarp; B1 Correction; N3,2006-12-12,0,I45630,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-20,0,98,57,41
+041_S_1260,041_S_1260,sMCI,2007-03-01,I65238,MPR; GradWarp; B1 Correction; N3,2007-02-01,0,I44575,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-08,0,35,28,7
+041_S_1368,041_S_1368,AD,2007-03-22,I65247,MPR; GradWarp; B1 Correction; N3,2007-03-05,0,I46781,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-22,0,17,17,0
+041_S_1391,041_S_1391,AD,2007-04-19,I62932,MPR; GradWarp; B1 Correction; N3,2007-03-29,0,I53496,"Coreg, Avg, Standardized Image and Voxel Size",2007-05-02,0,34,21,13
+041_S_1412,041_S_1412,pMCI,2007-07-30,I72218,MPR; GradWarp; B1 Correction; N3,2007-06-25,0,I70935,"Coreg, Avg, Standardized Image and Voxel Size",2007-08-24,0,60,35,25
+041_S_1418,041_S_1418,sMCI,2007-08-14,I73637,MPR; GradWarp; B1 Correction; N3,2007-07-27,0,I67296,"Coreg, Avg, Standardized Image and Voxel Size",2007-07-12,0,15,18,33
+041_S_1423,041_S_1423,pMCI,2007-08-15,I72227,MPR; GradWarp; B1 Correction; N3,2007-08-03,0,I74269,"Coreg, Avg, Standardized Image and Voxel Size",2007-09-19,0,47,12,35
+041_S_1425,041_S_1425,pMCI,2007-08-17,I73355,MPR; GradWarp; B1 Correction; N3,2007-08-06,0,I73283,"Coreg, Avg, Standardized Image and Voxel Size",2007-09-12,0,37,11,26
+041_S_4014,041_S_4014,CN,2011-06-16,I229335,MT1; GradWarp; N3m,2011-04-18,2,I245554,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-15,0,88,59,29
+041_S_4037,041_S_4037,CN,2011-06-27,I238644,MT1; GradWarp; N3m,2011-05-24,2,I239559,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-03,0,10,34,24
+041_S_4060,041_S_4060,CN,2011-06-27,I241342,MT1; GradWarp; N3m,2011-06-01,2,I241483,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-15,0,14,26,12
+041_S_4427,041_S_4427,CN,2012-01-19,I273513,MT1; GradWarp; N3m,2011-12-19,2,I280720,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-11,0,23,31,8
+041_S_4510,041_S_4510,sMCI,2012-03-12,I285452,MT1; GradWarp; N3m,2012-02-10,2,I287881,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-27,0,17,31,14
+041_S_4720,041_S_4720,pMCI,2012-06-08,I308100,MT1; GradWarp; N3m,2012-05-14,2,I307038,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-24,0,10,25,15
+041_S_4876,041_S_4876,sMCI,2012-08-22,I326580,MT1; GradWarp; N3m,2012-08-14,2,I327774,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-27,0,13,8,5
+041_S_4989,041_S_4989,sMCI,2012-12-07,I342390,MT1; GradWarp; N3m,2012-10-19,2,I345494,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-05,0,17,49,32
+041_S_5026,041_S_5026,pMCI,2012-11-30,I415949,MT1; GradWarp; N3m,2012-11-20,2,I349997,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-27,0,7,10,3
+041_S_5078,041_S_5078,CN,2013-04-11,I363334,MT1; GradWarp; N3m,2013-02-15,2,I362087,"Coreg, Avg, Standardized Image and Voxel Size",2013-02-25,0,10,55,45
+041_S_5082,041_S_5082,CN,2013-04-16,I363336,MT1; GradWarp; N3m,2013-02-19,2,I368060,"Coreg, Avg, Standardized Image and Voxel Size",2013-03-04,0,13,56,43
+041_S_5100,041_S_5100,CN,2013-04-18,I371416,MT1; GradWarp; N3m,2013-03-12,2,I367437,"Coreg, Avg, Standardized Image and Voxel Size",2013-04-01,0,20,37,17
+041_S_5131,041_S_5131,CN,2013-06-05,I371434,MT1; GradWarp; N3m,2013-04-09,2,I372116,"Coreg, Avg, Standardized Image and Voxel Size",2013-05-06,0,27,57,30
+041_S_5141,041_S_5141,CN,2013-06-05,I371441,MT1; GradWarp; N3m,2013-04-18,2,I373642,"Coreg, Avg, Standardized Image and Voxel Size",2013-05-06,0,18,48,30
+041_S_5204,041_S_5204,CN,2013-08-21,I377026,MT1; GradWarp; N3m,2013-06-11,2,I383863,"Coreg, Avg, Standardized Image and Voxel Size",2013-07-25,0,44,71,27
+041_S_5244,041_S_5244,CN,2013-08-21,I382256,MT1; GradWarp; N3m,2013-07-10,2,I384753,"Coreg, Avg, Standardized Image and Voxel Size",2013-08-06,0,27,42,15
+051_S_4929,051_S_4929,pMCI,2012-10-17,I337439,MT1; GradWarp; N3m,2012-09-18,2,I337891,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-01,0,13,29,16
+051_S_4980,051_S_4980,AD,2012-11-28,I349583,MT1; GradWarp; N3m,2012-10-29,2,I351302,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-28,0,30,30,0
+051_S_5005,051_S_5005,AD,2013-02-12,I349824,MT1; GradWarp; N3m,2012-11-06,2,I349156,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-21,0,15,98,83
+052_S_4626,052_S_4626,sMCI,2012-05-22,I296423,MT1; GradWarp; N3m,2012-04-03,2,I297831,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-13,0,10,49,39
+052_S_4807,052_S_4807,pMCI,2012-08-09,I322467,MT1; GradWarp; N3m,2012-07-27,2,I332299,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-10,0,14,13,1
+052_S_4944,052_S_4944,sMCI,2013-01-09,I350690,MT1; GradWarp; N3m,2012-10-19,2,I356262,"Coreg, Avg, Standardized Image and Voxel Size",2013-01-11,0,84,82,2
+052_S_4945,052_S_4945,pMCI,2013-01-04,I349800,MT1; GradWarp; N3m,2012-10-24,2,I356270,"Coreg, Avg, Standardized Image and Voxel Size",2013-01-11,0,79,72,7
+053_S_0621,053_S_0621,sMCI,2006-06-26,I64188,MPR; GradWarp; B1 Correction; N3,2006-06-12,0,I27979,"Coreg, Avg, Standardized Image and Voxel Size",2006-07-06,0,24,14,10
+053_S_0919,053_S_0919,sMCI,2007-02-15,I65684,MPR; GradWarp; B1 Correction; N3,2006-10-16,0,I30673,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-15,0,30,122,92
+053_S_1044,053_S_1044,AD,2007-01-15,I64197,MPR; GradWarp; B1 Correction; N3,2006-10-26,0,I30681,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-23,0,28,81,53
+057_S_0464,057_S_0464,sMCI,2006-06-20,I34706,MPR; GradWarp; B1 Correction; N3,2006-05-17,0,I27833,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-20,0,34,34,0
+057_S_0474,057_S_0474,AD,2006-05-30,I34715,MPR; GradWarp; B1 Correction; N3,2006-05-03,0,I27837,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-30,0,27,27,0
+057_S_0818,057_S_0818,CN,2006-09-27,I121430,MPR; GradWarp; B1 Correction; N3,2006-09-06,0,I27846,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-27,0,21,21,0
+057_S_0934,057_S_0934,CN,2006-10-25,I34733,MPR; GradWarp; B1 Correction; N3,2006-10-04,0,I27849,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-25,0,21,21,0
+057_S_0941,057_S_0941,pMCI,2006-10-25,I34742,MPR; GradWarp; B1 Correction; N3,2006-10-11,0,I27854,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-25,0,14,14,0
+057_S_1007,057_S_1007,pMCI,2006-11-14,I47764,MPR; GradWarp; B1 Correction; N3,2006-10-25,0,I35457,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-14,0,20,20,0
+057_S_1217,057_S_1217,pMCI,2007-02-14,I62983,MPR; GradWarp; B1 Correction; N3,2007-01-31,0,I42656,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-14,0,14,14,0
+057_S_1265,057_S_1265,pMCI,2007-02-13,I69491,MPR; GradWarp; B1 Correction; N3,2007-01-31,0,I42664,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-13,0,13,13,0
+057_S_1371,057_S_1371,AD,2007-04-12,I62992,MPR; GradWarp; B1 Correction; N3,2007-03-21,0,I51428,"Coreg, Avg, Standardized Image and Voxel Size",2007-04-24,0,34,22,12
+057_S_1373,057_S_1373,AD,2007-04-17,I63002,MPR; GradWarp; B1 Correction; N3,2007-03-21,0,I52733,"Coreg, Avg, Standardized Image and Voxel Size",2007-05-01,0,41,27,14
+057_S_1379,057_S_1379,AD,2007-04-12,I63013,MPR; GradWarp; B1 Correction; N3,2007-03-21,0,I51443,"Coreg, Avg, Standardized Image and Voxel Size",2007-04-24,0,34,22,12
+057_S_4888,057_S_4888,pMCI,2012-08-27,I322359,MT1; GradWarp; N3m,2012-08-03,2,I326241,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-22,0,19,24,5
+062_S_0535,062_S_0535,AD,2006-06-13,I50425,MPR; GradWarp; B1 Correction; N3,2006-05-18,0,I27857,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-21,0,34,26,8
+062_S_0690,062_S_0690,AD,2006-07-27,I50467,MPR; GradWarp; B1 Correction; N3,2006-07-18,0,I27859,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-08,0,21,9,12
+062_S_0730,062_S_0730,AD,2006-07-31,I50486,MPR; GradWarp; B1 Correction; N3,2006-07-19,0,I27861,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-02,0,14,12,2
+062_S_0768,062_S_0768,CN,2006-08-23,I50505,MPR; GradWarp; B1 Correction; N3,2006-08-02,0,I27863,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-05,0,34,21,13
+062_S_1099,062_S_1099,CN,2006-12-04,I50556,MPR; GradWarp; B1 Correction; N3,2006-11-20,0,I32537,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-05,0,15,14,1
+062_S_1299,062_S_1299,pMCI,2007-03-06,I50583,MPR; GradWarp; B1 Correction; N3,2007-02-20,0,I44581,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-07,0,15,14,1
+067_S_4728,067_S_4728,AD,2012-06-22,I312636,MT1; GradWarp; N3m,2012-06-01,2,I313008,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-20,0,19,21,2
+067_S_4918,067_S_4918,pMCI,2012-10-18,I337565,MT1; GradWarp; N3m,2012-09-21,2,I340444,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-12,0,21,27,6
+067_S_5159,067_S_5159,CN,2013-05-23,I371250,MT1; GradWarp; N3m,2013-05-02,2,I374183,"Coreg, Avg, Standardized Image and Voxel Size",2013-05-20,0,18,21,3
+067_S_5205,067_S_5205,AD,2013-07-23,I377885,MT1; GradWarp; N3m,2013-06-17,2,I379227,"Coreg, Avg, Standardized Image and Voxel Size",2013-07-01,0,14,36,22
+067_S_5212,067_S_5212,CN,2013-08-01,I382254,MT1; GradWarp; N3m,2013-07-11,2,I385810,"Coreg, Avg, Standardized Image and Voxel Size",2013-08-14,0,34,21,13
+068_S_4067,068_S_4067,sMCI,2011-07-15,I241366,MT1; GradWarp; N3m,2011-06-06,2,I242748,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-22,0,16,39,23
+068_S_4174,068_S_4174,CN,2012-01-18,I254775,MT1; GradWarp; N3m,2011-08-19,2,I257493,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-16,0,28,152,124
+068_S_4217,068_S_4217,sMCI,2012-01-18,I255437,MT1; GradWarp; N3m,2011-09-06,2,I260814,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-13,0,37,134,97
+068_S_4340,068_S_4340,CN,2012-01-18,I270045,MT1; GradWarp; N3m,2011-11-28,2,I294116,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-29,0,31,51,20
+068_S_4424,068_S_4424,CN,2012-01-18,I274671,MT1; GradWarp; N3m,2011-12-23,2,I281111,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-26,0,34,26,8
+068_S_4431,068_S_4431,sMCI,2012-03-21,I286646,MT1; GradWarp; N3m,2012-02-06,2,I294124,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-20,0,43,44,1
+070_S_4692,070_S_4692,AD,2012-05-17,I305605,MT1; GradWarp; N3m,2012-05-08,2,I308129,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-22,0,14,9,5
+070_S_4719,070_S_4719,AD,2012-06-14,I306756,MT1; GradWarp; N3m,2012-05-21,2,I312574,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-20,0,30,24,6
+070_S_4856,070_S_4856,CN,2012-08-03,I322550,MT1; GradWarp; N3m,2012-07-25,2,I323293,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-07,0,13,9,4
+070_S_5040,070_S_5040,CN,2012-12-17,I351376,MT1; GradWarp; N3m,2012-12-03,2,I355438,"Coreg, Avg, Standardized Image and Voxel Size",2012-12-24,0,21,14,7
+072_S_4057,072_S_4057,pMCI,2011-06-13,I241377,MT1; GradWarp; N3m,2011-06-07,2,I240029,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-13,0,6,6,0
+072_S_4063,072_S_4063,sMCI,2011-07-13,I241403,MT1; GradWarp; N3m,2011-06-17,2,I242756,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-29,0,12,26,14
+072_S_4102,072_S_4102,pMCI,2011-09-15,I248636,MT1; GradWarp; N3m,2011-07-20,2,I253173,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-24,0,35,57,22
+072_S_4103,072_S_4103,CN,2011-09-21,I248634,MT1; GradWarp; N3m,2011-07-20,2,I253177,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-24,0,35,63,28
+072_S_4131,072_S_4131,pMCI,2011-09-08,I248648,MT1; GradWarp; N3m,2011-07-25,2,I251269,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-04,0,10,45,35
+072_S_4206,072_S_4206,sMCI,2011-10-10,I255406,MT1; GradWarp; N3m,2011-09-02,2,I260995,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-26,0,24,38,14
+072_S_4226,072_S_4226,sMCI,2011-10-12,I258717,MT1; GradWarp; N3m,2011-09-26,2,I260822,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-07,0,11,16,5
+072_S_4383,072_S_4383,sMCI,2012-01-24,I272712,MT1; GradWarp; N3m,2011-12-09,2,I275685,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-27,0,18,46,28
+072_S_4390,072_S_4390,sMCI,2012-01-24,I272714,MT1; GradWarp; N3m,2011-12-08,2,I275689,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-27,0,19,47,28
+072_S_4391,072_S_4391,CN,2012-01-24,I277671,MT1; GradWarp; N3m,2012-01-06,2,I280724,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-17,0,11,18,7
+072_S_4394,072_S_4394,sMCI,2012-01-24,I275763,MT1; GradWarp; N3m,2011-12-28,2,I280226,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-20,0,23,27,4
+072_S_4462,072_S_4462,pMCI,2012-03-07,I283938,MT1; GradWarp; N3m,2012-02-02,2,I285728,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-16,0,14,34,20
+072_S_4465,072_S_4465,sMCI,2012-03-07,I285484,MT1; GradWarp; N3m,2012-02-14,2,I286924,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-24,0,10,22,12
+072_S_4522,072_S_4522,sMCI,2012-03-09,I286083,MT1; GradWarp; N3m,2012-02-17,2,I287899,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-02,0,14,21,7
+072_S_4539,072_S_4539,sMCI,2012-03-23,I296335,MT1; GradWarp; N3m,2012-03-05,2,I293735,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-26,0,21,18,3
+072_S_4613,072_S_4613,sMCI,2012-04-12,I296329,MT1; GradWarp; N3m,2012-04-02,2,I297776,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-13,0,11,10,1
+072_S_4871,072_S_4871,sMCI,2012-09-11,I326503,MT1; GradWarp; N3m,2012-08-09,2,I326134,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-20,0,11,33,22
+072_S_4941,072_S_4941,sMCI,2012-10-26,I340527,MT1; GradWarp; N3m,2012-10-10,2,I342595,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-23,0,13,16,3
+073_S_0311,073_S_0311,CN,2006-08-02,I39867,MPR; GradWarp; B1 Correction; N3,2006-05-31,0,I27880,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-21,0,82,63,19
+073_S_0312,073_S_0312,CN,2006-08-02,I39877,MPR; GradWarp; B1 Correction; N3,2006-05-31,0,I27884,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-21,0,82,63,19
+073_S_0565,073_S_0565,AD,2006-08-03,I39918,MPR; GradWarp; B1 Correction; N3,2006-06-21,0,I27899,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-22,0,62,43,19
+073_S_0746,073_S_0746,sMCI,2007-03-07,I63117,MPR; GradWarp; B1 Correction; N3,2006-11-30,0,I44587,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-01,0,63,97,34
+073_S_0909,073_S_0909,pMCI,2006-11-27,I75484,MPR; GradWarp; B1 Correction; N3,2006-10-02,0,I33210,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-05,0,64,56,8
+073_S_4155,073_S_4155,CN,2011-09-07,I248679,MT1; GradWarp; N3m,2011-07-28,2,I253185,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-19,0,22,41,19
+073_S_4216,073_S_4216,sMCI,2011-09-22,I254822,MT1; GradWarp; N3m,2011-08-31,2,I257610,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-19,0,19,22,3
+073_S_4300,073_S_4300,sMCI,2011-12-16,I263689,MT1; GradWarp; N3m,2011-10-12,2,I268120,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-16,0,35,65,30
+073_S_4311,073_S_4311,sMCI,2012-01-04,I263680,MT1; GradWarp; N3m,2011-10-17,2,I271252,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-05,0,49,79,30
+073_S_4312,073_S_4312,sMCI,2012-01-04,I263682,MT1; GradWarp; N3m,2011-10-17,2,I271256,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-05,0,49,79,30
+073_S_4360,073_S_4360,sMCI,2012-01-18,I267765,MT1; GradWarp; N3m,2011-11-04,2,I271484,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-09,0,35,75,40
+073_S_4382,073_S_4382,CN,2012-01-31,I267773,MT1; GradWarp; N3m,2011-11-15,2,I272516,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-12,0,27,77,50
+073_S_4393,073_S_4393,CN,2011-12-20,I270031,MT1; GradWarp; N3m,2011-11-22,2,I278321,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-12,0,51,28,23
+073_S_4443,073_S_4443,sMCI,2012-02-27,I274669,MT1; GradWarp; N3m,2011-12-22,2,I286573,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-21,0,61,67,6
+073_S_4552,073_S_4552,CN,2012-05-15,I285488,MT1; GradWarp; N3m,2012-02-15,2,I293362,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-21,0,35,90,55
+073_S_4559,073_S_4559,CN,2012-05-02,I288879,MT1; GradWarp; N3m,2012-02-24,2,I293366,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-23,0,28,68,40
+073_S_4614,073_S_4614,sMCI,2012-05-01,I291929,MT1; GradWarp; N3m,2012-03-16,2,I301086,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-24,0,39,46,7
+073_S_4739,073_S_4739,CN,2012-08-30,I308102,MT1; GradWarp; N3m,2012-05-16,2,I317146,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-16,0,61,106,45
+073_S_4762,073_S_4762,CN,2012-09-04,I315318,MT1; GradWarp; N3m,2012-05-24,2,I321657,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-24,0,61,103,42
+073_S_4853,073_S_4853,AD,2012-09-24,I322646,MT1; GradWarp; N3m,2012-07-11,2,I326557,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-21,0,41,75,34
+073_S_4986,073_S_4986,sMCI,2012-12-14,I339187,MT1; GradWarp; N3m,2012-10-04,2,I349164,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-26,0,53,71,18
+073_S_5016,073_S_5016,AD,2013-04-10,I349543,MT1; GradWarp; N3m,2012-10-25,2,I365863,"Coreg, Avg, Standardized Image and Voxel Size",2013-04-02,0,159,167,8
+073_S_5090,073_S_5090,AD,2013-07-22,I363221,MT1; GradWarp; N3m,2013-02-07,2,I383041,"Coreg, Avg, Standardized Image and Voxel Size",2013-07-15,0,158,165,7
+073_S_5167,073_S_5167,CN,2013-06-21,I377168,MT1; GradWarp; N3m,2013-04-26,2,I380119,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-18,0,53,56,3
+082_S_0641,082_S_0641,pMCI,2006-10-05,I39780,MPR; GradWarp; B1 Correction; N3,2006-06-19,0,I27903,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-18,0,60,108,48
+082_S_4090,082_S_4090,CN,2011-07-12,I241401,MT1; GradWarp; N3m,2011-06-20,2,I242645,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-28,0,8,22,14
+082_S_4208,082_S_4208,CN,2011-09-19,I255417,MT1; GradWarp; N3m,2011-08-30,2,I255932,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-12,0,13,20,7
+082_S_4224,082_S_4224,CN,2011-10-13,I258690,MT1; GradWarp; N3m,2011-09-21,2,I260477,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-04,0,13,22,9
+082_S_4339,082_S_4339,CN,2011-12-08,I267749,MT1; GradWarp; N3m,2011-11-09,2,I268124,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-18,0,9,29,20
+082_S_4428,082_S_4428,CN,2012-01-09,I274514,MT1; GradWarp; N3m,2011-12-20,2,I282942,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-09,0,20,20,0
+082_S_5029,082_S_5029,AD,2012-12-13,I414450,MT1; GradWarp; N3m,2012-11-14,2,I349176,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-29,0,15,29,14
+082_S_5184,082_S_5184,AD,2013-06-07,I374699,MT1; GradWarp; N3m,2013-05-22,2,I375264,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-03,0,12,16,4
+082_S_5278,082_S_5278,CN,2013-09-04,I388019,MT1; GradWarp; N3m,2013-08-15,2,I417326,"Coreg, Avg, Standardized Image and Voxel Size",2013-12-04,0,111,20,91
+082_S_5279,082_S_5279,CN,2013-10-23,I387866,MT1; GradWarp; N3m,2013-08-19,2,I397954,"Coreg, Avg, Standardized Image and Voxel Size",2013-11-07,0,80,65,15
+094_S_1090,094_S_1090,AD,2007-01-16,I63175,MPR; GradWarp; B1 Correction; N3,2006-12-04,0,I36874,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-16,0,12,43,31
+094_S_1164,094_S_1164,AD,2007-01-16,I67222,MPR; GradWarp; B1 Correction; N3,2006-12-11,0,I37231,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-18,0,38,36,2
+094_S_1314,094_S_1314,sMCI,2007-03-29,I63195,MPR; GradWarp; B1 Correction; N3,2007-02-26,0,I48296,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-30,0,32,31,1
+094_S_1397,094_S_1397,AD,2007-05-17,I95657,MPR; GradWarp; B1 Correction; N3,2007-04-26,0,I57701,"Coreg, Avg, Standardized Image and Voxel Size",2007-06-15,0,50,21,29
+094_S_1398,094_S_1398,pMCI,2007-05-17,I63226,MPR; GradWarp; B1 Correction; N3,2007-05-03,0,I56758,"Coreg, Avg, Standardized Image and Voxel Size",2007-06-07,0,35,14,21
+094_S_1402,094_S_1402,AD,2007-05-25,I66077,MPR; GradWarp; B1 Correction; N3,2007-05-10,0,I58484,"Coreg, Avg, Standardized Image and Voxel Size",2007-06-26,0,47,15,32
+094_S_1417,094_S_1417,sMCI,2007-08-03,I73646,MPR; GradWarp; B1 Correction; N3,2007-07-16,0,I66401,"Coreg, Avg, Standardized Image and Voxel Size",2007-08-06,0,21,18,3
+094_S_4089,094_S_4089,AD,2011-08-10,I417108,MT1; GradWarp; N3m,2011-06-29,2,I247596,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-26,0,27,42,15
+094_S_4162,094_S_4162,pMCI,2011-09-28,I254760,MT1; GradWarp; N3m,2011-08-16,2,I256393,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-08,0,23,43,20
+094_S_4282,094_S_4282,AD,2012-01-04,I263736,MT1; GradWarp; N3m,2011-10-20,2,I269503,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-28,0,39,76,37
+094_S_4459,094_S_4459,CN,2012-01-23,I845648,MT1; GradWarp; N3m,2012-02-07,2,I290401,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-06,0,28,15,43
+094_S_4503,094_S_4503,CN,2012-04-18,I288885,MT1; GradWarp; N3m,2012-02-22,2,I294329,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-15,0,22,56,34
+094_S_4560,094_S_4560,CN,2012-04-30,I293721,MT1; GradWarp; N3m,2012-03-16,2,I300129,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-11,0,26,45,19
+094_S_4630,094_S_4630,sMCI,2012-08-24,I846435,MT1; GradWarp; N3m,2012-04-03,2,I313016,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-22,0,49,143,94
+094_S_4649,094_S_4649,CN,2012-08-15,I305480,MT1; GradWarp; N3m,2012-05-10,2,I315215,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-06,0,27,97,70
+094_S_4737,094_S_4737,AD,2012-07-30,I846434,MT1; GradWarp; N3m,2012-06-08,2,I316172,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-05,0,27,52,25
+094_S_4858,094_S_4858,sMCI,2012-11-26,I846433,MT1; GradWarp; N3m,2012-09-11,2,I345498,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-01,0,51,76,25
+098_S_4003,098_S_4003,CN,2011-04-15,I225425,MT1; GradWarp; N3m,2011-03-22,2,I228865,"Coreg, Avg, Standardized Image and Voxel Size",2011-04-15,0,24,24,0
+098_S_4018,098_S_4018,CN,2011-06-02,I229328,MT1; GradWarp; N3m,2011-04-22,2,I238680,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-01,0,40,41,1
+098_S_4050,098_S_4050,CN,2011-06-21,I241354,MT1; GradWarp; N3m,2011-05-27,2,I252771,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-14,0,48,25,23
+098_S_4201,098_S_4201,AD,2011-10-04,I260233,MT1; GradWarp; N3m,2011-09-14,2,I262003,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-14,0,30,20,10
+098_S_4215,098_S_4215,AD,2011-10-03,I258658,MT1; GradWarp; N3m,2011-09-12,2,I262310,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-21,0,39,21,18
+099_S_0054,099_S_0054,pMCI,2005-12-29,I35824,MPR; GradWarp; B1 Correction; N3,2005-11-16,0,I27936,"Coreg, Avg, Standardized Image and Voxel Size",2005-12-22,0,36,43,7
+099_S_0090,099_S_0090,CN,2006-02-07,I35840,MPR; GradWarp; B1 Correction; N3,2006-01-11,0,I27940,"Coreg, Avg, Standardized Image and Voxel Size",2006-01-24,0,13,27,14
+099_S_0291,099_S_0291,sMCI,2006-05-19,I34523,MPR; GradWarp; B1 Correction; N3,2006-03-09,0,I27944,"Coreg, Avg, Standardized Image and Voxel Size",2006-03-24,0,15,71,56
+099_S_0352,099_S_0352,CN,2006-05-19,I34536,MPR; GradWarp; B1 Correction; N3,2006-04-07,0,I27946,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-17,0,10,42,32
+099_S_0470,099_S_0470,AD,2006-05-26,I34561,MPR; GradWarp; B1 Correction; N3,2006-05-10,0,I27948,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-19,0,9,16,7
+099_S_0492,099_S_0492,AD,2006-09-01,I38769,MPR; GradWarp; B1 Correction; N3,2006-05-25,0,I27950,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-07,0,13,99,86
+099_S_0533,099_S_0533,CN,2006-09-01,I38780,MPR; GradWarp; B1 Correction; N3,2006-05-25,0,I27952,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-08,0,14,99,85
+099_S_0534,099_S_0534,CN,2006-05-24,I34573,MPR; GradWarp; B1 Correction; N3,2006-05-04,0,I27954,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-24,0,20,20,0
+099_S_1034,099_S_1034,sMCI,2006-12-15,I47952,MPR; GradWarp; B1 Correction; N3,2006-11-02,0,I33214,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-20,0,18,43,25
+099_S_1144,099_S_1144,AD,2007-03-09,I102034,MPR; GradWarp; B1 Correction; N3,2006-12-19,0,I39037,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-27,0,8,80,72
+099_S_4086,099_S_4086,CN,2011-07-19,I296347,MT1; GradWarp; N3m,2011-06-28,2,I247600,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-26,0,28,21,7
+099_S_4104,099_S_4104,CN,2011-07-12,I296349,MT1; GradWarp; N3m,2011-07-01,2,I246097,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-18,0,17,11,6
+099_S_4157,099_S_4157,pMCI,2011-09-15,I254781,MT1; GradWarp; N3m,2011-08-23,2,I257978,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-20,0,28,23,5
+099_S_4202,099_S_4202,sMCI,2011-10-10,I260235,MT1; GradWarp; N3m,2011-09-27,2,I265035,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-27,0,30,13,17
+099_S_4205,099_S_4205,sMCI,2011-11-04,I261079,MT1; GradWarp; N3m,2011-10-07,2,I266572,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-11,0,35,28,7
+099_S_4463,099_S_4463,sMCI,2012-02-01,I283954,MT1; GradWarp; N3m,2012-02-02,2,I291117,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-16,0,43,1,44
+099_S_4498,099_S_4498,sMCI,2012-04-10,I291052,MT1; GradWarp; N3m,2012-03-15,2,I311988,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-20,0,97,26,71
+099_S_4994,099_S_4994,AD,2012-12-17,I350327,MT1; GradWarp; N3m,2012-12-03,2,I355450,"Coreg, Avg, Standardized Image and Voxel Size",2013-01-11,0,39,14,25
+109_S_0777,109_S_0777,AD,2006-09-21,I82575,MPR; GradWarp; B1 Correction; N3,2006-09-07,0,I30087,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-02,0,25,14,11
+109_S_0950,109_S_0950,sMCI,2006-12-12,I97195,MPR; GradWarp; B1 Correction; N3,2006-10-25,0,I32543,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-16,0,22,48,26
+109_S_0967,109_S_0967,CN,2006-12-12,I55043,MPR; GradWarp; B1 Correction; N3,2006-10-23,0,I30091,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-15,0,23,50,27
+109_S_1013,109_S_1013,CN,2006-12-12,I66148,MPR; GradWarp; B1 Correction; N3,2006-11-08,0,I33966,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-18,0,40,34,6
+109_S_1114,109_S_1114,sMCI,2007-01-10,I63488,MPR; GradWarp; B1 Correction; N3,2006-12-27,0,I36879,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-09,0,13,14,1
+109_S_1157,109_S_1157,AD,2007-01-10,I66157,MPR; GradWarp; B1 Correction; N3,2007-01-03,0,I37707,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-08,0,5,7,2
+109_S_4455,109_S_4455,sMCI,2012-03-05,I285905,MT1; GradWarp; N3m,2012-02-02,2,I287910,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-29,0,27,32,5
+109_S_4531,109_S_4531,sMCI,2012-03-22,I291870,MT1; GradWarp; N3m,2012-03-13,2,I293610,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-19,0,6,9,3
+109_S_4594,109_S_4594,sMCI,2012-05-07,I300258,MT1; GradWarp; N3m,2012-03-30,2,I300313,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-23,0,24,38,14
+114_S_0228,114_S_0228,AD,2006-03-03,I49734,MPR; GradWarp; B1 Correction; N3,2006-02-16,0,I29064,"Coreg, Avg, Standardized Image and Voxel Size",2006-03-09,0,21,15,6
+114_S_0374,114_S_0374,AD,2006-04-19,I39816,MPR; GradWarp; B1 Correction; N3,2006-04-10,0,I29072,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-27,0,17,9,8
+114_S_0979,114_S_0979,AD,2006-11-21,I39858,MPR; GradWarp; B1 Correction; N3,2006-11-01,0,I30506,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-20,0,19,20,1
+114_S_1118,114_S_1118,sMCI,2007-01-03,I49767,MPR; GradWarp; B1 Correction; N3,2006-12-08,0,I35374,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-27,0,19,26,7
+114_S_4379,114_S_4379,AD,2012-01-26,I281847,MT1; GradWarp; N3m,2011-12-07,2,I280732,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-23,0,47,50,3
+116_S_0648,116_S_0648,CN,2006-08-15,I59665,MPR; GradWarp; N3,2006-08-03,9,I28185,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-24,0,21,12,9
+116_S_0657,116_S_0657,CN,2006-09-07,I59738,MPR; GradWarp; N3,2006-08-24,9,I28189,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-26,0,33,14,19
+116_S_1243,116_S_1243,pMCI,2007-03-06,I59731,MPR; GradWarp; N3,2007-02-07,9,I42685,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-27,0,20,27,7
+116_S_1315,116_S_1315,pMCI,2007-04-03,I59717,MPR; GradWarp; N3,2007-03-08,9,I49428,"Coreg, Avg, Standardized Image and Voxel Size",2007-04-05,0,28,26,2
+116_S_4010,116_S_4010,CN,2011-04-18,I228524,MT1; GradWarp; N3m,2011-03-31,2,I233327,"Coreg, Avg, Standardized Image and Voxel Size",2011-04-22,0,22,18,4
+116_S_4043,116_S_4043,CN,2011-06-02,I236974,MT1; GradWarp; N3m,2011-05-17,2,I240261,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-10,0,24,16,8
+116_S_4167,116_S_4167,pMCI,2011-08-25,I258635,MT1; GradWarp; N3m,2011-08-10,2,I255187,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-02,0,23,15,8
+116_S_4195,116_S_4195,AD,2011-09-15,I255413,MT1; GradWarp; N3m,2011-08-31,2,I257155,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-19,0,19,15,4
+116_S_4209,116_S_4209,AD,2011-09-15,I254813,MT1; GradWarp; N3m,2011-08-29,2,I258862,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-23,0,25,17,8
+116_S_4338,116_S_4338,AD,2011-11-22,I267741,MT1; GradWarp; N3m,2011-11-02,2,I269602,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-28,0,26,20,6
+116_S_4453,116_S_4453,CN,2012-02-01,I281425,MT1; GradWarp; N3m,2012-01-18,2,I286306,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-10,0,23,14,9
+116_S_4483,116_S_4483,CN,2012-02-21,I281407,MT1; GradWarp; N3m,2012-01-25,2,I287394,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-24,0,30,27,3
+116_S_4625,116_S_4625,AD,2012-04-24,I296584,MT1; GradWarp; N3m,2012-03-29,2,I306329,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-20,0,22,26,4
+116_S_4635,116_S_4635,sMCI,2012-04-25,I296402,MT1; GradWarp; N3m,2012-03-29,2,I303027,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-27,0,29,27,2
+116_S_4732,116_S_4732,AD,2012-06-15,I312655,MT1; GradWarp; N3m,2012-05-31,2,I311668,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-18,0,18,15,3
+116_S_4898,116_S_4898,sMCI,2012-08-28,I326508,MT1; GradWarp; N3m,2012-08-08,2,I337249,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-11,0,34,20,14
+123_S_4096,123_S_4096,pMCI,2011-08-19,I248656,MT1; GradWarp; N3m,2011-07-28,2,I257874,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-29,0,32,22,10
+123_S_4127,123_S_4127,sMCI,2011-08-16,I250621,MT1; GradWarp; N3m,2011-08-03,2,I250336,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-11,0,8,13,5
+123_S_4170,123_S_4170,sMCI,2011-09-14,I254811,MT1; GradWarp; N3m,2011-08-27,2,I257878,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-01,0,5,18,13
+123_S_4362,123_S_4362,CN,2011-12-02,I270052,MT1; GradWarp; N3m,2011-11-28,2,I273903,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-02,0,4,4,0
+123_S_4526,123_S_4526,AD,2012-02-14,I285119,MT1; GradWarp; N3m,2012-02-09,2,I290072,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-14,0,5,5,0
+123_S_4780,123_S_4780,sMCI,2012-07-26,I312845,MT1; GradWarp; N3m,2012-06-21,2,I319689,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-17,0,26,35,9
+123_S_4806,123_S_4806,sMCI,2012-07-20,I312849,MT1; GradWarp; N3m,2012-06-21,2,I317955,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-17,0,26,29,3
+126_S_0506,126_S_0506,CN,2006-06-28,I38849,MPR; GradWarp; B1 Correction; N3,2006-06-14,0,I28193,"Coreg, Avg, Standardized Image and Voxel Size",2006-07-11,0,27,14,13
+126_S_0708,126_S_0708,pMCI,2006-07-26,I38943,MPR; GradWarp; B1 Correction; N3,2006-07-17,0,I28201,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-29,0,43,9,34
+126_S_0709,126_S_0709,sMCI,2006-08-10,I38963,MPR; GradWarp; B1 Correction; N3,2006-07-26,0,I28205,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-15,0,20,15,5
+126_S_0865,126_S_0865,pMCI,2006-11-21,I39019,MPR; GradWarp; B1 Correction; N3,2006-11-06,0,I31059,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-28,0,22,15,7
+126_S_0891,126_S_0891,AD,2006-10-12,I39040,MPR; GradWarp; B1 Correction; N3,2006-09-25,0,I28209,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-24,0,29,17,12
+126_S_1077,126_S_1077,pMCI,2006-12-19,I48875,MPR; GradWarp; B1 Correction; N3,2006-12-06,0,I36073,"Coreg, Avg, Standardized Image and Voxel Size",2007-01-09,0,34,13,21
+126_S_1221,126_S_1221,AD,2007-02-07,I48967,MPR; GradWarp; B1 Correction; N3,2007-01-23,0,I40205,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-13,0,21,15,6
+126_S_4458,126_S_4458,pMCI,2012-01-31,I281837,MT1; GradWarp; N3m,2012-01-20,2,I282465,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-31,0,11,11,0
+126_S_4494,126_S_4494,AD,2012-02-15,I282672,MT1; GradWarp; N3m,2012-01-31,2,I287412,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-28,0,28,15,13
+126_S_4507,126_S_4507,pMCI,2012-02-14,I283924,MT1; GradWarp; N3m,2012-02-03,2,I285086,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-14,0,11,11,0
+126_S_4514,126_S_4514,sMCI,2012-02-22,I285133,MT1; GradWarp; N3m,2012-02-10,2,I286525,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-22,0,12,12,0
+126_S_4675,126_S_4675,pMCI,2012-05-03,I300300,MT1; GradWarp; N3m,2012-04-20,2,I301924,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-03,0,13,13,0
+126_S_4686,126_S_4686,AD,2012-05-09,I305417,MT1; GradWarp; N3m,2012-04-27,2,I304714,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-09,0,12,12,0
+126_S_4712,126_S_4712,pMCI,2012-05-15,I305603,MT1; GradWarp; N3m,2012-05-08,2,I307678,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-29,0,21,7,14
+126_S_4896,126_S_4896,sMCI,2012-08-27,I326506,MT1; GradWarp; N3m,2012-08-08,2,I328106,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-28,0,20,19,1
+127_S_0394,127_S_0394,pMCI,2006-06-27,I34397,MPR; GradWarp; B1 Correction; N3,2006-05-17,0,I28290,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-30,0,44,41,3
+127_S_0431,127_S_0431,AD,2006-06-27,I34442,MPR; GradWarp; B1 Correction; N3,2006-05-17,0,I28294,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-30,0,44,41,3
+127_S_0754,127_S_0754,AD,2006-09-29,I80759,MPR; GradWarp; B1 Correction; N3,2006-09-05,0,I29562,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-10,0,66,24,42
+127_S_1382,127_S_1382,AD,2007-04-27,I66309,MPR; GradWarp; B1 Correction; N3,2007-03-16,0,I54076,"Coreg, Avg, Standardized Image and Voxel Size",2007-05-04,0,49,42,7
+127_S_1419,127_S_1419,sMCI,2007-08-28,I73655,MPR; GradWarp; B1 Correction; N3,2007-07-23,0,I71921,"Coreg, Avg, Standardized Image and Voxel Size",2007-08-31,0,39,36,3
+127_S_1427,127_S_1427,pMCI,2007-09-03,I91125,MPR; GradWarp; B1 Correction; N3,2007-08-20,0,I73792,"Coreg, Avg, Standardized Image and Voxel Size",2007-09-14,0,25,14,11
+127_S_4148,127_S_4148,CN,2011-09-14,I250659,MT1; GradWarp; N3m,2011-08-11,2,I253196,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-16,0,5,34,29
+127_S_4210,127_S_4210,sMCI,2011-10-19,I255431,MT1; GradWarp; N3m,2011-09-08,2,I261180,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-04,0,26,41,15
+127_S_4240,127_S_4240,pMCI,2011-10-26,I260225,MT1; GradWarp; N3m,2011-09-23,2,I260997,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-05,0,12,33,21
+127_S_4301,127_S_4301,sMCI,2011-11-22,I263740,MT1; GradWarp; N3m,2011-10-24,2,I267795,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-08,0,15,29,14
+127_S_4500,127_S_4500,AD,2012-05-17,I285127,MT1; GradWarp; N3m,2012-02-08,2,I286581,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-24,0,16,99,83
+127_S_4604,127_S_4604,CN,2012-05-17,I291900,MT1; GradWarp; N3m,2012-03-21,2,I303317,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-29,0,8,57,49
+127_S_4645,127_S_4645,CN,2012-05-17,I296528,MT1; GradWarp; N3m,2012-04-04,2,I303325,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-19,0,15,43,28
+127_S_4765,127_S_4765,pMCI,2012-07-09,I312708,MT1; GradWarp; N3m,2012-06-08,2,I317043,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-26,0,18,31,13
+127_S_4843,127_S_4843,CN,2012-11-08,I322917,MT1; GradWarp; N3m,2012-07-18,2,I325147,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-09,0,22,113,91
+127_S_4844,127_S_4844,pMCI,2012-11-08,I322919,MT1; GradWarp; N3m,2012-07-18,2,I327779,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-10,0,23,113,90
+127_S_4928,127_S_4928,pMCI,2012-10-17,I331859,MT1; GradWarp; N3m,2012-09-05,2,I340991,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-28,0,23,42,19
+127_S_4940,127_S_4940,AD,2012-11-28,I337437,MT1; GradWarp; N3m,2012-09-19,2,I341009,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-05,0,16,70,54
+127_S_4992,127_S_4992,AD,2012-11-28,I349547,MT1; GradWarp; N3m,2012-10-25,2,I349196,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-15,0,21,34,13
+127_S_5028,127_S_5028,AD,2013-01-09,I349916,MT1; GradWarp; N3m,2012-11-14,2,I350082,"Coreg, Avg, Standardized Image and Voxel Size",2012-12-06,0,22,56,34
+127_S_5056,127_S_5056,AD,2013-02-15,I353885,MT1; GradWarp; N3m,2013-01-03,2,I355590,"Coreg, Avg, Standardized Image and Voxel Size",2013-01-10,0,7,43,36
+128_S_0200,128_S_0200,sMCI,2006-03-07,I68799,MPR; GradWarp; N3,2006-02-13,9,I57878,"Coreg, Avg, Standardized Image and Voxel Size",2006-03-09,0,24,22,2
+128_S_0216,128_S_0216,AD,2006-02-27,I68830,MPR; GradWarp; N3,2006-02-14,9,I62084,"Coreg, Avg, Standardized Image and Voxel Size",2006-03-02,0,16,13,3
+128_S_0225,128_S_0225,sMCI,2006-03-08,I68840,MPR; GradWarp; N3,2006-02-15,9,I58023,"Coreg, Avg, Standardized Image and Voxel Size",2006-03-10,0,23,21,2
+128_S_0227,128_S_0227,pMCI,2006-04-13,I68710,MPR; GradWarp; N3,2006-03-02,9,I65555,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-03,0,62,42,20
+128_S_0245,128_S_0245,CN,2006-04-18,I68860,MPR; GradWarp; N3,2006-03-21,9,I28593,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-04,0,44,28,16
+128_S_0258,128_S_0258,pMCI,2006-05-02,I68877,MPR; GradWarp; N3,2006-04-06,9,I70312,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-10,0,34,26,8
+128_S_0266,128_S_0266,AD,2006-04-17,I68897,MPR; GradWarp; N3,2006-03-22,9,I64019,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-26,0,35,26,9
+128_S_0272,128_S_0272,CN,2006-04-26,I68925,MPR; GradWarp; N3,2006-03-22,9,I57342,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-04,0,43,35,8
+128_S_0500,128_S_0500,CN,2006-05-25,I70812,MPR; GradWarp; N3,2006-05-15,9,I62101,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-30,0,15,10,5
+128_S_0608,128_S_0608,sMCI,2006-06-15,I69015,MPR; GradWarp; N3,2006-06-01,9,I67621,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-19,0,18,14,4
+128_S_0715,128_S_0715,sMCI,2006-07-26,I89787,MPR-R; GradWarp; N3,2006-07-18,10,I60217,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-04,0,17,8,9
+128_S_0740,128_S_0740,AD,2006-08-21,I69047,MPR; GradWarp; N3,2006-07-31,9,I73300,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-25,0,25,21,4
+128_S_0770,128_S_0770,sMCI,2006-08-14,I70857,MPR; GradWarp; N3,2006-07-28,9,I66902,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-28,0,31,17,14
+128_S_0863,128_S_0863,CN,2006-10-11,I98874,MPR; GradWarp; B1 Correction; N3,2006-09-25,0,I63665,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-13,0,18,16,2
+128_S_0947,128_S_0947,pMCI,2006-10-27,I69072,MPR; GradWarp; B1 Correction; N3,2006-10-06,0,I67632,"Coreg, Avg, Standardized Image and Voxel Size",2006-11-06,0,31,21,10
+128_S_1043,128_S_1043,pMCI,2006-12-14,I69090,MPR; GradWarp; B1 Correction; N3,2006-11-15,0,I58987,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-11,0,26,29,3
+128_S_1407,128_S_1407,pMCI,2007-06-25,I69389,MPR; GradWarp; B1 Correction; N3,2007-06-06,0,I90112,"Coreg, Avg, Standardized Image and Voxel Size",2007-06-08,0,2,19,17
+128_S_1409,128_S_1409,AD,2007-07-30,I69399,MPR; GradWarp; B1 Correction; N3,2007-06-19,0,I77707,"Coreg, Avg, Standardized Image and Voxel Size",2007-06-11,0,8,41,49
+128_S_1430,128_S_1430,AD,2007-09-21,I79856,MPR; GradWarp; B1 Correction; N3,2007-09-07,0,I80863,"Coreg, Avg, Standardized Image and Voxel Size",2007-09-19,0,12,14,2
+128_S_4553,128_S_4553,sMCI,2012-03-06,I286635,MT1; GradWarp; N3m,2012-02-20,2,I312412,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-05,0,106,15,91
+128_S_4571,128_S_4571,sMCI,2012-04-10,I290960,MT1; GradWarp; N3m,2012-03-10,2,I312416,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-29,0,80,31,49
+128_S_4586,128_S_4586,CN,2012-06-26,I312674,MT1; GradWarp; N3m,2012-06-05,2,I316901,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-13,0,38,21,17
+128_S_4599,128_S_4599,CN,2012-03-29,I291878,MT1; GradWarp; N3m,2012-03-17,2,I307964,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-24,0,68,12,56
+128_S_4609,128_S_4609,CN,2012-04-19,I296406,MT1; GradWarp; N3m,2012-04-04,2,I310943,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-29,0,55,15,40
+128_S_4636,128_S_4636,sMCI,2012-04-17,I295861,MT1; GradWarp; N3m,2012-03-27,2,I311337,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-29,0,63,21,42
+128_S_4653,128_S_4653,sMCI,2012-05-01,I300250,MT1; GradWarp; N3m,2012-04-18,2,I306256,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-10,0,22,13,9
+128_S_4742,128_S_4742,sMCI,2012-06-14,I312658,MT1; GradWarp; N3m,2012-05-31,2,I316271,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-06,0,36,14,22
+128_S_4772,128_S_4772,AD,2012-07-17,I312736,MT1; GradWarp; N3m,2012-06-13,2,I317158,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-17,0,34,34,0
+128_S_4774,128_S_4774,AD,2012-07-20,I312864,MT1; GradWarp; N3m,2012-06-21,2,I321788,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-01,0,41,29,12
+128_S_4792,128_S_4792,AD,2012-06-28,I312843,MT1; GradWarp; N3m,2012-06-18,2,I319776,"Coreg, Avg, Standardized Image and Voxel Size",2012-07-25,0,37,10,27
+128_S_4832,128_S_4832,CN,2012-07-26,I322932,MT1; GradWarp; N3m,2012-07-09,2,I324538,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-09,0,31,17,14
+128_S_5066,128_S_5066,sMCI,2013-02-27,I358509,MT1; GradWarp; N3m,2012-12-21,2,I361508,"Coreg, Avg, Standardized Image and Voxel Size",2013-02-12,0,53,68,15
+129_S_1246,129_S_1246,sMCI,2007-03-12,I69732,MPR; GradWarp; N3,2007-02-06,9,I47381,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-16,0,38,34,4
+129_S_4073,129_S_4073,sMCI,2011-07-12,I241399,MT1; GradWarp; N3m,2011-06-20,2,I243587,"Coreg, Avg, Standardized Image and Voxel Size",2011-06-29,0,9,22,13
+129_S_4220,129_S_4220,sMCI,2011-10-12,I258655,MT1; GradWarp; N3m,2011-09-13,2,I261909,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-06,0,23,29,6
+129_S_4287,129_S_4287,sMCI,2011-11-07,I263726,MT1; GradWarp; N3m,2011-10-20,2,I264760,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-01,0,12,18,6
+129_S_4369,129_S_4369,CN,2011-12-14,I267779,MT1; GradWarp; N3m,2011-11-17,2,I270634,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-05,0,18,27,9
+129_S_4371,129_S_4371,CN,2011-12-21,I270037,MT1; GradWarp; N3m,2011-11-23,2,I270638,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-06,0,13,28,15
+129_S_4396,129_S_4396,CN,2011-12-14,I270065,MT1; GradWarp; N3m,2011-12-01,2,I272174,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-13,0,12,13,1
+130_S_0289,130_S_0289,pMCI,2006-03-31,I39113,MPR; GradWarp; B1 Correction; N3,2006-03-13,0,I28677,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-19,0,37,18,19
+130_S_0783,130_S_0783,sMCI,2006-08-29,I39153,MPR; GradWarp; B1 Correction; N3,2006-08-17,0,I71064,"Coreg, Avg, Standardized Image and Voxel Size",2006-09-06,0,20,12,8
+130_S_1201,130_S_1201,AD,2007-02-02,I63756,MPR; GradWarp; B1 Correction; N3,2007-01-15,0,I71068,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-07,0,23,18,5
+130_S_1290,130_S_1290,AD,2007-02-27,I63765,MPR; GradWarp; B1 Correction; N3,2007-02-07,0,I71071,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-06,0,27,20,7
+131_S_0319,131_S_0319,CN,2006-04-06,I47979,MPR; GradWarp; B1 Correction; N3,2006-03-20,0,I28695,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-12,0,23,17,6
+131_S_0497,131_S_0497,AD,2006-06-19,I48037,MPR; GradWarp; B1 Correction; N3,2006-06-07,0,I28703,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-28,0,21,12,9
+132_S_0987,132_S_0987,pMCI,2007-04-23,I83162,MPR; GradWarp; N3,2007-03-21,9,I58488,"Coreg, Avg, Standardized Image and Voxel Size",2007-04-10,0,20,33,13
+135_S_4281,135_S_4281,sMCI,2011-10-31,I263683,MT1; GradWarp; N3m,2011-10-14,2,I266106,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-07,0,24,17,7
+135_S_4309,135_S_4309,sMCI,2011-11-14,I263754,MT1; GradWarp; N3m,2011-10-26,2,I269507,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-17,0,22,19,3
+135_S_4356,135_S_4356,sMCI,2011-11-28,I267753,MT1; GradWarp; N3m,2011-11-10,2,I270732,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-05,0,25,18,7
+135_S_4406,135_S_4406,pMCI,2011-12-13,I272692,MT1; GradWarp; N3m,2011-12-07,2,I273911,"Coreg, Avg, Standardized Image and Voxel Size",2011-12-13,0,6,6,0
+135_S_4489,135_S_4489,sMCI,2012-02-13,I283942,MT1; GradWarp; N3m,2012-02-02,2,I286491,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-21,0,19,11,8
+135_S_4598,135_S_4598,CN,2012-04-09,I291884,MT1; GradWarp; N3m,2012-03-20,2,I300321,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-17,0,28,20,8
+135_S_4657,135_S_4657,AD,2012-04-30,I297888,MT1; GradWarp; N3m,2012-04-12,2,I305081,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-08,0,26,18,8
+135_S_4676,135_S_4676,AD,2012-05-07,I300297,MT1; GradWarp; N3m,2012-04-19,2,I306236,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-16,0,27,18,9
+135_S_4689,135_S_4689,pMCI,2012-05-14,I305422,MT1; GradWarp; N3m,2012-04-27,2,I306411,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-22,0,25,17,8
+135_S_4722,135_S_4722,sMCI,2012-06-04,I305615,MT1; GradWarp; N3m,2012-05-16,2,I308813,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-07,0,22,19,3
+135_S_4723,135_S_4723,sMCI,2012-06-05,I305621,MT1; GradWarp; N3m,2012-05-16,2,I308821,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-07,0,22,20,2
+135_S_4863,135_S_4863,AD,2012-08-20,I322957,MT1; GradWarp; N3m,2012-08-01,2,I330784,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-28,0,27,19,8
+135_S_4954,135_S_4954,AD,2012-10-15,I337552,MT1; GradWarp; N3m,2012-09-24,2,I342840,"Coreg, Avg, Standardized Image and Voxel Size",2012-10-23,0,29,21,8
+135_S_5015,135_S_5015,AD,2012-11-26,I349914,MT1; GradWarp; N3m,2012-11-13,2,I349204,"Coreg, Avg, Standardized Image and Voxel Size",2012-11-26,0,13,13,0
+135_S_5113,135_S_5113,CN,2013-04-15,I377193,MT1; GradWarp; N3m,2013-04-03,2,I369986,"Coreg, Avg, Standardized Image and Voxel Size",2013-04-15,0,12,12,0
+135_S_5275,135_S_5275,AD,2013-08-27,I388925,MT1; GradWarp; N3m,2013-08-05,2,I391309,"Coreg, Avg, Standardized Image and Voxel Size",2013-09-06,0,32,22,10
+136_S_0695,136_S_0695,pMCI,2006-09-25,I70922,MPR; GradWarp; B1 Correction; N3,2006-09-18,0,I28707,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-12,0,24,7,17
+137_S_0158,137_S_0158,sMCI,2006-03-20,I45868,MPR; GradWarp; N3,2006-02-14,9,I28731,"Coreg, Avg, Standardized Image and Voxel Size",2006-03-16,0,30,34,4
+137_S_0283,137_S_0283,CN,2006-05-01,I66427,MPR; GradWarp; N3,2006-03-15,9,I28735,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-20,0,36,47,11
+137_S_0301,137_S_0301,CN,2006-05-01,I45877,MPR; GradWarp; N3,2006-03-30,9,I28739,"Coreg, Avg, Standardized Image and Voxel Size",2006-04-27,0,28,32,4
+137_S_0438,137_S_0438,AD,2006-05-18,I46614,MPR; GradWarp; N3,2006-04-27,9,I28743,"Coreg, Avg, Standardized Image and Voxel Size",2006-05-16,0,19,21,2
+137_S_0481,137_S_0481,sMCI,2006-06-12,I46639,MPR; GradWarp; N3,2006-05-11,9,I28755,"Coreg, Avg, Standardized Image and Voxel Size",2006-06-01,0,21,32,11
+137_S_0686,137_S_0686,CN,2006-08-11,I46664,MPR; GradWarp; N3,2006-07-03,9,I28763,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-04,0,32,39,7
+137_S_0800,137_S_0800,sMCI,2006-09-01,I43033,MPR; GradWarp; N3,2006-08-14,9,I28771,"Coreg, Avg, Standardized Image and Voxel Size",2006-08-30,0,16,18,2
+137_S_0841,137_S_0841,AD,2006-10-27,I49775,MPR; GradWarp; N3,2006-09-27,9,I28779,"Coreg, Avg, Standardized Image and Voxel Size",2006-10-18,0,21,30,9
+137_S_0973,137_S_0973,pMCI,2006-12-12,I43058,MPR; GradWarp; N3,2006-11-15,9,I33551,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-13,0,28,27,1
+137_S_1041,137_S_1041,AD,2006-12-20,I43067,MPR; GradWarp; N3,2006-11-09,9,I33556,"Coreg, Avg, Standardized Image and Voxel Size",2006-12-12,0,33,41,8
+137_S_1414,137_S_1414,sMCI,2007-09-18,I74556,MPR; GradWarp; N3,2007-08-01,9,I75214,"Coreg, Avg, Standardized Image and Voxel Size",2007-09-07,0,37,48,11
+137_S_4211,137_S_4211,AD,2011-10-02,I258692,MT1; GradWarp; N3m,2011-09-21,2,I260658,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-04,0,13,11,2
+137_S_4258,137_S_4258,AD,2011-10-19,I261075,MT1; GradWarp; N3m,2011-10-11,2,I262035,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-17,0,6,8,2
+137_S_4299,137_S_4299,sMCI,2011-12-05,I265267,MT1; GradWarp; N3m,2011-11-02,2,I267588,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-14,0,12,33,21
+137_S_4466,137_S_4466,CN,2012-03-08,I281889,MT1; GradWarp; N3m,2012-01-25,2,I288959,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-05,0,40,43,3
+137_S_4482,137_S_4482,CN,2012-03-23,I285903,MT1; GradWarp; N3m,2012-02-16,2,I289805,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-06,0,19,36,17
+137_S_4520,137_S_4520,CN,2012-04-18,I296355,MT1; GradWarp; N3m,2012-03-01,2,I293664,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-26,0,25,48,23
+137_S_4536,137_S_4536,sMCI,2012-04-09,I288887,MT1; GradWarp; N3m,2012-02-22,2,I290828,"Coreg, Avg, Standardized Image and Voxel Size",2012-03-09,0,16,47,31
+137_S_4587,137_S_4587,CN,2012-06-14,I300252,MT1; GradWarp; N3m,2012-04-16,2,I303385,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-01,0,15,59,44
+137_S_4596,137_S_4596,pMCI,2012-04-25,I291882,MT1; GradWarp; N3m,2012-03-19,2,I300780,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-16,0,28,37,9
+137_S_4623,137_S_4623,pMCI,2012-05-09,I296410,MT1; GradWarp; N3m,2012-04-04,2,I303333,"Coreg, Avg, Standardized Image and Voxel Size",2012-05-04,0,30,35,5
+137_S_4632,137_S_4632,CN,2012-07-16,I305446,MT1; GradWarp; N3m,2012-05-03,2,I315421,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-26,0,54,74,20
+137_S_4672,137_S_4672,AD,2012-05-08,I300256,MT1; GradWarp; N3m,2012-04-16,2,I303341,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-30,0,14,22,8
+137_S_4678,137_S_4678,sMCI,2012-06-14,I305449,MT1; GradWarp; N3m,2012-05-03,2,I312071,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-01,0,29,42,13
+137_S_4756,137_S_4756,AD,2012-07-16,I312660,MT1; GradWarp; N3m,2012-05-31,2,I316553,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-18,0,18,46,28
+137_S_4815,137_S_4815,pMCI,2012-09-26,I326526,MT1; GradWarp; N3m,2012-08-02,2,I336297,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-19,0,48,55,7
+137_S_4816,137_S_4816,pMCI,2012-09-17,I326584,MT1; GradWarp; N3m,2012-08-14,2,I334337,"Coreg, Avg, Standardized Image and Voxel Size",2012-09-07,0,24,34,10
+141_S_1378,141_S_1378,sMCI,2007-04-09,I91303,MPR; GradWarp; B1 Correction; N3,2007-03-26,0,I56762,"Coreg, Avg, Standardized Image and Voxel Size",2007-05-21,0,56,14,42
+141_S_4160,141_S_4160,sMCI,2011-10-11,I258664,MT1; GradWarp; N3m,2011-09-04,2,I260826,"Coreg, Avg, Standardized Image and Voxel Size",2011-10-07,0,33,37,4
+153_S_4077,153_S_4077,sMCI,2011-07-05,I296357,MT1; GradWarp; N3m,2011-06-15,2,I249511,"Coreg, Avg, Standardized Image and Voxel Size",2011-07-15,0,30,20,10
+153_S_4125,153_S_4125,CN,2011-08-02,I248630,MT1; GradWarp; N3m,2011-07-20,2,I249523,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-05,0,16,13,3
+153_S_4139,153_S_4139,CN,2011-08-22,I250661,MT1; GradWarp; N3m,2011-08-11,2,I254841,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-26,0,15,11,4
+153_S_4151,153_S_4151,CN,2011-08-29,I254777,MT1; GradWarp; N3m,2011-08-18,2,I254849,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-31,0,13,11,2
+153_S_4172,153_S_4172,AD,2011-09-01,I254770,MT1; GradWarp; N3m,2011-08-17,2,I257175,"Coreg, Avg, Standardized Image and Voxel Size",2011-09-14,0,28,15,13
+153_S_4372,153_S_4372,CN,2011-12-07,I270067,MT1; GradWarp; N3m,2011-11-30,2,I282316,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-13,0,44,7,37
+153_S_4621,153_S_4621,sMCI,2012-04-18,I295881,MT1; GradWarp; N3m,2012-03-28,2,I302395,"Coreg, Avg, Standardized Image and Voxel Size",2012-04-19,0,22,21,1
+153_S_4838,153_S_4838,sMCI,2012-10-15,I323002,MT1; GradWarp; N3m,2012-07-18,2,I356386,"Coreg, Avg, Standardized Image and Voxel Size",2012-08-27,0,40,89,49
+153_S_5261,153_S_5261,CN,2013-08-14,I384092,MT1; GradWarp; N3m,2013-07-25,2,I387279,"Coreg, Avg, Standardized Image and Voxel Size",2013-08-13,0,19,20,1
+153_S_5267,153_S_5267,CN,2013-09-03,I384777,MT1; GradWarp; N3m,2013-08-01,2,I391928,"Coreg, Avg, Standardized Image and Voxel Size",2013-09-09,0,39,33,6
+941_S_1195,941_S_1195,CN,2007-02-20,I63859,MPR; GradWarp; B1 Correction; N3,2007-02-08,0,I43083,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-06,0,26,12,14
+941_S_1197,941_S_1197,CN,2007-02-16,I66461,MPR; GradWarp; B1 Correction; N3,2007-01-20,0,I42730,"Coreg, Avg, Standardized Image and Voxel Size",2007-02-16,0,27,27,0
+941_S_1295,941_S_1295,pMCI,2007-02-28,I63887,MPR; GradWarp; B1 Correction; N3,2007-02-09,0,I48163,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-22,0,41,19,22
+941_S_1311,941_S_1311,pMCI,2007-03-19,I97326,MPR; GradWarp; B1 Correction; N3,2007-03-02,0,I48077,"Coreg, Avg, Standardized Image and Voxel Size",2007-03-30,0,28,17,11
+941_S_4036,941_S_4036,sMCI,2011-07-11,I236982,MT1; GradWarp; N3m,2011-05-10,2,I255191,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-24,0,106,62,44
+941_S_4066,941_S_4066,CN,2011-06-22,I241396,MT1; GradWarp; N3m,2011-06-17,2,I255199,"Coreg, Avg, Standardized Image and Voxel Size",2011-08-24,0,68,5,63
+941_S_4255,941_S_4255,CN,2011-11-14,I261061,MT1; GradWarp; N3m,2011-10-07,2,I268132,"Coreg, Avg, Standardized Image and Voxel Size",2011-11-16,0,40,38,2
+941_S_4292,941_S_4292,CN,2011-12-20,I272646,MT1; GradWarp; N3m,2011-12-05,2,I278424,"Coreg, Avg, Standardized Image and Voxel Size",2012-01-13,0,39,15,24
+941_S_4376,941_S_4376,CN,2012-02-02,I277667,MT1; GradWarp; N3m,2012-01-06,2,I283672,"Coreg, Avg, Standardized Image and Voxel Size",2012-02-08,0,33,27,6
+941_S_4764,941_S_4764,sMCI,2012-07-09,I312638,MT1; GradWarp; N3m,2012-06-01,2,I315149,"Coreg, Avg, Standardized Image and Voxel Size",2012-06-13,0,12,38,26
+941_S_5193,941_S_5193,CN,2013-06-27,I375627,MT1; GradWarp; N3m,2013-05-29,2,I378346,"Coreg, Avg, Standardized Image and Voxel Size",2013-06-19,0,21,29,8
