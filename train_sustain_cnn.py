@@ -70,6 +70,7 @@ def parse_args():
     # Loss scaling weights
     p.add_argument('--lambda_subtype', type=float, default=1.0)
     p.add_argument('--lambda_stage', type=float, default=1.0)
+    p.add_argument('--lambda_diag', type=float, default=1.0)
 
     args = p.parse_args()
     return args
@@ -91,33 +92,34 @@ def train_epoch(model, loader, optimizer, args):
         subtype_probs = batch['subtype_probs'].to(args.device)
         assigned_subtype = batch['assigned_subtype'].to(args.device)
         assigned_stage = batch['assigned_stage'].to(args.device)
+        clinical_code = batch['clinical_code'].to(args.device)
         
         B = mri.size(0)
         
-        # 1. Forward Pass
-        subtype_logits, stage_logits_list = model(mri)
+        # 1. Forward Pass (3 outputs: subtype, stage heads, clinical diagnosis head)
+        subtype_logits, stage_logits_list, diag_logits = model(mri)
         
         # 2. Subtype Loss: Soft Target Cross-Entropy
-        # Computed manually for broad compatibility: loss = -sum(target * log_softmax)
         log_probs = F.log_softmax(subtype_logits, dim=-1)
         loss_sub = -(subtype_probs * log_probs).sum(dim=-1).mean()
         
         # 3. Stage Loss: Ordinal cumulative BCE with Pure Hard Masking
-        # Construct cumulative binary target matrix: shape (B, 48)
         ordinal_targets = torch.zeros(B, 48, device=args.device)
         for i in range(B):
             S = int(torch.clamp(assigned_stage[i], min=0, max=48).item())
             ordinal_targets[i, :S] = 1.0
             
-        # Select stage logits corresponding to the assigned subtype for each sample
         stacked_stage_logits = torch.stack(stage_logits_list, dim=1) # (B, 3, 48)
         batch_indices = torch.arange(B, device=args.device)
         assigned_logits = stacked_stage_logits[batch_indices, assigned_subtype, :] # (B, 48)
         
         loss_stage = F.binary_cross_entropy_with_logits(assigned_logits, ordinal_targets)
+
+        # 4. Clinical Diagnosis Loss: Cross-Entropy (CN, sMCI, pMCI, AD)
+        loss_diag = F.cross_entropy(diag_logits, clinical_code)
         
-        # 4. Backward Pass & Step
-        loss = args.lambda_subtype * loss_sub + args.lambda_stage * loss_stage
+        # 5. Combined Multi-Task Loss & Backward Pass
+        loss = args.lambda_subtype * loss_sub + args.lambda_stage * loss_stage + args.lambda_diag * loss_diag
         
         optimizer.zero_grad()
         loss.backward()
@@ -133,13 +135,14 @@ def train_epoch(model, loader, optimizer, args):
 
 def evaluate(model, loader, args):
     """
-    Evaluates the model and computes metrics: Accuracy, Macro F1, Subtype MSE, Stage MAE, QWK, and Spearman Rho.
+    Evaluates the model and computes metrics: Subtype Acc/F1, Stage MAE, QWK, Spearman Rho, and Diagnosis Acc/F1.
     """
     model.eval()
     
     total_loss = 0.0
     total_loss_sub = 0.0
     total_loss_stage = 0.0
+    total_loss_diag = 0.0
     
     all_sub_preds = []
     all_sub_targets = []
@@ -147,6 +150,8 @@ def evaluate(model, loader, args):
     all_sub_probs_target = []
     all_stage_preds = []
     all_stage_targets = []
+    all_diag_preds = []
+    all_diag_targets = []
     
     with torch.no_grad():
         for batch in loader:
@@ -154,11 +159,12 @@ def evaluate(model, loader, args):
             subtype_probs = batch['subtype_probs'].to(args.device)
             assigned_subtype = batch['assigned_subtype'].to(args.device)
             assigned_stage = batch['assigned_stage'].to(args.device)
+            clinical_code = batch['clinical_code'].to(args.device)
             
             B = mri.size(0)
             
             # Forward pass
-            subtype_logits, stage_logits_list = model(mri)
+            subtype_logits, stage_logits_list, diag_logits = model(mri)
             
             # Subtype loss
             log_probs = F.log_softmax(subtype_logits, dim=-1)
@@ -175,12 +181,16 @@ def evaluate(model, loader, args):
             assigned_logits = stacked_stage_logits[batch_indices, assigned_subtype, :] # (B, 48)
             
             loss_stage = F.binary_cross_entropy_with_logits(assigned_logits, ordinal_targets)
+
+            # Clinical diagnosis loss
+            loss_diag = F.cross_entropy(diag_logits, clinical_code)
                 
-            loss = args.lambda_subtype * loss_sub + args.lambda_stage * loss_stage
+            loss = args.lambda_subtype * loss_sub + args.lambda_stage * loss_stage + args.lambda_diag * loss_diag
             
             total_loss += loss.item() * B
             total_loss_sub += loss_sub.item() * B
             total_loss_stage += loss_stage.item() * B
+            total_loss_diag += loss_diag.item() * B
             
             # Predictions for metrics
             pred_sub = torch.argmax(subtype_logits, dim=-1)
@@ -201,6 +211,11 @@ def evaluate(model, loader, args):
                 
             all_stage_preds.extend(reconstructed_stages.cpu().numpy())
             all_stage_targets.extend(assigned_stage.cpu().numpy())
+
+            # Diagnosis Predictions
+            pred_diag = torch.argmax(diag_logits, dim=-1)
+            all_diag_preds.extend(pred_diag.cpu().numpy())
+            all_diag_targets.extend(clinical_code.cpu().numpy())
             
     num_samples = len(loader.dataset)
     avg_loss = total_loss / num_samples
@@ -220,8 +235,11 @@ def evaluate(model, loader, args):
     rho, _ = spearmanr(all_stage_preds, all_stage_targets)
     if np.isnan(rho):
         rho = 0.0
+
+    diag_acc = accuracy_score(all_diag_targets, all_diag_preds)
+    diag_f1 = f1_score(all_diag_targets, all_diag_preds, average='macro')
     
-    return avg_loss, avg_loss_sub, avg_loss_stage, acc, f1, sub_prob_mse, mae, qwk, rho
+    return avg_loss, avg_loss_sub, avg_loss_stage, acc, f1, sub_prob_mse, mae, qwk, rho, diag_acc, diag_f1
 
 
 def predict_test(model, loader, args):
@@ -231,6 +249,7 @@ def predict_test(model, loader, args):
     model.eval()
     predictions = []
     
+    inv_map = {0: 'CN', 1: 'sMCI', 2: 'pMCI', 3: 'AD'}
     with torch.no_grad():
         for batch in loader:
             mri = batch['mri'].to(args.device)
@@ -239,12 +258,16 @@ def predict_test(model, loader, args):
             assigned_stage = batch['assigned_stage'].to(args.device)
             subject_ids = batch['subject_id']
             
-            subtype_logits, stage_logits_list = model(mri)
+            subtype_logits, stage_logits_list, diag_logits = model(mri)
             
             # Predict subtype (highest logit index + 1 to match CSV 1, 2, 3)
             pred_sub = torch.argmax(subtype_logits, dim=-1).cpu().numpy() + 1
             probs_sub_pred = torch.softmax(subtype_logits, dim=-1).cpu().numpy()
             
+            # Predict 4-class diagnosis
+            pred_diag = torch.argmax(diag_logits, dim=-1).cpu().numpy()
+            probs_diag_pred = torch.softmax(diag_logits, dim=-1).cpu().numpy()
+
             # Reconstruct stages
             reconstructed_stages = torch.zeros(mri.size(0), device=args.device)
             probs_sub_pred_torch = torch.softmax(subtype_logits, dim=-1)
@@ -254,9 +277,12 @@ def predict_test(model, loader, args):
                 reconstructed_stages += probs_sub_pred_torch[:, c] * stage_c
             pred_stages = reconstructed_stages.cpu().numpy()
             
+            clinical_labels = batch.get('clinical_label', ['Unknown'] * mri.size(0))
             for i in range(mri.size(0)):
                 predictions.append({
                     'PTID':                  subject_ids[i],
+                    'Label_True':            clinical_labels[i],
+                    'Label_Pred':            inv_map.get(pred_diag[i], 'Unknown'),
                     'Assigned_Subtype_True': int(assigned_subtype[i].item()) + 1,
                     'Assigned_Subtype_Pred': int(pred_sub[i]),
                     'Assigned_Stage_True':   float(assigned_stage[i].item()),
@@ -266,7 +292,11 @@ def predict_test(model, loader, args):
                     'Prob_Subtype_3_True':   float(subtype_probs[i, 2].item()),
                     'Prob_Subtype_1_Pred':   float(probs_sub_pred[i, 0]),
                     'Prob_Subtype_2_Pred':   float(probs_sub_pred[i, 1]),
-                    'Prob_Subtype_3_Pred':   float(probs_sub_pred[i, 2])
+                    'Prob_Subtype_3_Pred':   float(probs_sub_pred[i, 2]),
+                    'Prob_CN_Pred':          float(probs_diag_pred[i, 0]),
+                    'Prob_sMCI_Pred':        float(probs_diag_pred[i, 1]),
+                    'Prob_pMCI_Pred':        float(probs_diag_pred[i, 2]),
+                    'Prob_AD_Pred':          float(probs_diag_pred[i, 3])
                 })
                 
     return predictions
@@ -313,7 +343,7 @@ def train_fold_pipeline(train_idx, val_idx, test_idx, dataset, fold_name, args):
     # Epoch Loop
     for epoch in range(1, args.epochs + 1):
         tr_loss, tr_sub, tr_stg = train_epoch(model, train_loader, optimizer, args)
-        val_loss, val_sub, val_stg, val_acc, val_f1, val_mse, val_mae, val_qwk, val_rho = evaluate(model, val_loader, args)
+        val_loss, val_sub, val_stg, val_acc, val_f1, val_mse, val_mae, val_qwk, val_rho, val_dacc, val_df1 = evaluate(model, val_loader, args)
         
         scheduler.step()
         
@@ -321,9 +351,9 @@ def train_fold_pipeline(train_idx, val_idx, test_idx, dataset, fold_name, args):
         if epoch == 1 or epoch % 10 == 0 or epoch == args.epochs:
             print(f"Epoch {epoch:02d}/{args.epochs:02d} | "
                   f"Tr Loss: {tr_loss:.4f} (Sub: {tr_sub:.3f}, Stg: {tr_stg:.3f}) | "
-                  f"Val Loss: {val_loss:.4f} (Sub: {val_sub:.3f}, Stg: {val_stg:.3f}) | "
-                  f"Sub Acc: {val_acc:.3f}, F1: {val_f1:.3f}, MSE: {val_mse:.4f} | "
-                  f"Stg MAE: {val_mae:.2f}, QWK: {val_qwk:.3f}, Rho: {val_rho:.3f}")
+                  f"Val Loss: {val_loss:.4f} | "
+                  f"Sub Acc: {val_acc:.3f} | Stg MAE: {val_mae:.2f} | "
+                  f"Diag Acc: {val_dacc:.3f}, Diag F1: {val_df1:.3f}")
                   
         # Save Best Checkpoint
         if val_loss < best_val_loss:
@@ -339,7 +369,9 @@ def train_fold_pipeline(train_idx, val_idx, test_idx, dataset, fold_name, args):
                 'val_loss': val_loss,
                 'val_mae': val_mae,
                 'val_qwk': val_qwk,
-                'val_rho': val_rho
+                'val_rho': val_rho,
+                'val_diag_acc': val_dacc,
+                'val_diag_f1': val_df1
             }, best_path)
             
     # Save Last Checkpoint
@@ -359,18 +391,18 @@ def train_fold_pipeline(train_idx, val_idx, test_idx, dataset, fold_name, args):
     )
     model.load_state_dict(checkpoint['model_state_dict'])
     
-    test_loss, test_sub, test_stg, test_acc, test_f1, test_mse, test_mae, test_qwk, test_rho = evaluate(model, test_loader, args)
-    print(f"---> Fold {fold_name} TEST Performance: Loss: {test_loss:.4f} | Sub Acc: {test_acc:.3f}, F1: {test_f1:.3f} | Stg MAE: {test_mae:.2f}, QWK: {test_qwk:.3f}")
+    test_loss, test_sub, test_stg, test_acc, test_f1, test_mse, test_mae, test_qwk, test_rho, test_dacc, test_df1 = evaluate(model, test_loader, args)
+    print(f"---> Fold {fold_name} TEST Performance: Loss: {test_loss:.4f} | Sub Acc: {test_acc:.3f} | Stg MAE: {test_mae:.2f} | Diag Acc: {test_dacc:.3f}, Diag F1: {test_df1:.3f}")
     
     test_predictions = predict_test(model, test_loader, args)
     for pred in test_predictions:
         pred['Test_Fold'] = fold_name
         
-    return test_loss, test_acc, test_f1, test_mae, test_qwk, test_rho, test_predictions
+    return test_loss, test_acc, test_f1, test_mae, test_qwk, test_rho, test_dacc, test_df1, test_predictions
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Main Execution
+# Main Execution Entrypoint
 # ══════════════════════════════════════════════════════════════════════════════
 
 def main():
@@ -406,6 +438,8 @@ def main():
         test_maes = []
         test_qwks = []
         test_rhos = []
+        test_daccs = []
+        test_df1s = []
         
         # Outer loop: every subject is tested exactly once
         for fold, (trainval_idx, test_idx) in enumerate(skf.split(np.zeros(len(dataset)), subtypes), start=1):
@@ -417,7 +451,7 @@ def main():
             train_idx = shuffled_trainval[:split_point]
             val_idx   = shuffled_trainval[split_point:]
             
-            loss, acc, f1, mae, qwk, rho, preds = train_fold_pipeline(
+            loss, acc, f1, mae, qwk, rho, dacc, df1, preds = train_fold_pipeline(
                 train_idx, val_idx, test_idx, dataset, f"fold{fold}", args
             )
             

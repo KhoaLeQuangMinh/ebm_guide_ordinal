@@ -48,9 +48,11 @@ class SuStaInDataset(Dataset):
         # Drop any rows with missing essential staging info
         df = df.dropna(subset=['Assigned_Subtype', 'Assigned_Stage'])
 
+        label_mapping = {'CN': 0, 'sMCI': 1, 'pMCI': 2, 'AD': 3}
         self._labels_map = {}
         for _, row in df.iterrows():
             ptid = str(row['PTID']).strip()
+            clinical_str = str(row['Label']) if 'Label' in row and pd.notna(row['Label']) else 'Unknown'
             self._labels_map[ptid] = {
                 'assigned_subtype': int(row['Assigned_Subtype']) - 1,  # convert 1,2,3 -> 0,1,2
                 'assigned_stage': float(row['Assigned_Stage']),
@@ -58,7 +60,9 @@ class SuStaInDataset(Dataset):
                     row['Prob_Subtype_1'],
                     row['Prob_Subtype_2'],
                     row['Prob_Subtype_3']
-                ], dtype=np.float32)
+                ], dtype=np.float32),
+                'clinical_label': clinical_str,
+                'clinical_code': label_mapping.get(clinical_str, 0)
             }
 
         # ── 2. Scan the npz directory and keep only matched subjects ─────────
@@ -111,7 +115,9 @@ class SuStaInDataset(Dataset):
             'subtype_probs':    torch.tensor(label_info['subtype_probs'], dtype=torch.float32),
             'assigned_subtype': torch.tensor(label_info['assigned_subtype'], dtype=torch.long),
             'assigned_stage':   torch.tensor(label_info['assigned_stage'], dtype=torch.float32),
-            'subject_id':       ptid
+            'subject_id':       ptid,
+            'clinical_label':   label_info.get('clinical_label', 'Unknown'),
+            'clinical_code':    torch.tensor(label_info.get('clinical_code', 0), dtype=torch.long)
         }
 
 
@@ -149,10 +155,16 @@ class MockDataset(Dataset):
         return self._subtypes
 
     def __getitem__(self, idx: int) -> dict:
+        rng = np.random.default_rng(idx)
+        # Generate random synthetic 3D volume (1, 128, 128, 128)
+        mri = rng.uniform(0.0, 1.0, size=(1, 128, 128, 128)).astype(np.float32)
+
         return {
-            'mri':              torch.randn(1, *TARGET_SHAPE),
+            'mri':              torch.from_numpy(mri),
             'subtype_probs':    torch.tensor(self._probs[idx], dtype=torch.float32),
             'assigned_subtype': torch.tensor(self._subtypes[idx], dtype=torch.long),
             'assigned_stage':   torch.tensor(self._stages[idx], dtype=torch.float32),
-            'subject_id':       f'mock_{idx:03d}'
+            'subject_id':       f"MOCK_{idx:04d}",
+            'clinical_label':   'CN',
+            'clinical_code':    torch.tensor(0, dtype=torch.long)
         }
