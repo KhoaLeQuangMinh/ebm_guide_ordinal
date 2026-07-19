@@ -1,15 +1,19 @@
 """
 train_kaggle_baseline_sustain_cnn.py
 ====================================
-Exact 1-to-1 copy of original 1st experiment baseline (Git commit f93d83a)
-Combined into a single self-contained Python file for Kaggle execution.
+Exact, un-modified 1-to-1 copy of Git commit 951c423
+(Initial SuStaIn 3D ResNet-18 baseline before 4-class classification head).
+Combined into a single self-contained Python file for Kaggle.
 """
 
 import argparse
 import copy
+import csv
+import datetime
 import json
 import math
 import os
+import random
 import sys
 import warnings
 from functools import partial
@@ -28,11 +32,107 @@ warnings.filterwarnings('ignore', message='.*deterministic.*')
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 1. 3D ResNet-18 Backbone (src/models/resnet3d.py from Git commit f93d83a)
+# 1. UTILS (src/utils.py from Git commit 951c423)
+# ══════════════════════════════════════════════════════════════════════════════
+
+class Tee:
+    def __init__(self, file_handle):
+        self._file = file_handle
+        self._stdout = sys.stdout
+
+    def write(self, data):
+        self._stdout.write(data)
+        self._file.write(data)
+
+    def flush(self):
+        self._stdout.flush()
+        self._file.flush()
+
+    def restore(self):
+        return self._stdout
+
+
+def save_run_config(args, log_path: str) -> "Tee":
+    os.makedirs(os.path.dirname(log_path), exist_ok=True)
+    log_file = open(log_path, "a")
+
+    header = [
+        "=" * 62,
+        f"  RUN  —  {datetime.datetime.now().strftime('%Y-%m-%d  %H:%M:%S')}",
+        "=" * 62,
+        "  ARGUMENTS",
+        "-" * 62,
+    ]
+    for k, v in vars(args).items():
+        header.append(f"  {k:<30} {v}")
+    header += ["-" * 62, "  TRAINING LOG", "-" * 62, ""]
+
+    block = "\n".join(header) + "\n"
+    log_file.write(block)
+    log_file.flush()
+
+    tee = Tee(log_file)
+    sys.stdout = tee
+    return tee
+
+
+def print_experiment_config(args):
+    print("\n" + "=" * 60)
+    print(f"  Experiment : {args.experiment_name}")
+    print("-" * 60)
+    print(f"  Task       : SuStaIn Subtype & Stage Multi-Task CNN")
+    print(f"  Encoder    : 3D ResNet-18 (prototype-free)")
+    print(f"  Loss       : Soft Cross-Entropy (Subtype) + Ordinal BCE (Stage)")
+    print("-" * 60)
+    print(f"  Device     : {args.device}")
+    print(f"  Epochs     : {args.epochs}")
+    print(f"  Batch Size : {args.batch_size}")
+    print("-" * 60)
+    print(f"  LR         : {args.lr}")
+    print(f"  Weight dec.: {args.weight_decay}")
+    print(f"  Gamma (Dec): {args.gamma}")
+    print("=" * 60 + "\n")
+
+
+def set_global_seed(seed: int = 42, deterministic: bool = True):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    os.environ["PYTHONHASHSEED"] = str(seed)
+
+    if deterministic:
+        os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+        try:
+            torch.use_deterministic_algorithms(True, warn_only=True)
+        except TypeError:
+            torch.use_deterministic_algorithms(True)
+    else:
+        torch.backends.cudnn.benchmark = True
+
+
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2 ** 32
+    random.seed(worker_seed)
+    np.random.seed(worker_seed)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 2. 3D RESNET-18 BACKBONE (src/models/resnet3d.py from Git commit 951c423)
 # ══════════════════════════════════════════════════════════════════════════════
 
 def conv3x3x3(in_planes, out_planes, stride=1):
-    return nn.Conv3d(in_planes, out_planes, kernel_size=3, stride=stride, padding=1, bias=False)
+    return nn.Conv3d(
+        in_planes,
+        out_planes,
+        kernel_size=3,
+        stride=stride,
+        padding=1,
+        bias=False,
+    )
 
 
 def downsample_basic_block(x, planes, stride):
@@ -74,11 +174,24 @@ class BasicBlock(nn.Module):
 
 
 class ResNet3D(nn.Module):
-    def __init__(self, block=BasicBlock, layers=[2, 2, 2, 2], spatial_size=128, sample_duration=128, shortcut_type='B'):
+    def __init__(
+        self,
+        block=BasicBlock,
+        layers=[2, 2, 2, 2],
+        spatial_size=128,
+        sample_duration=128,
+        shortcut_type='B',
+    ):
         self.inplanes = 64
         super().__init__()
 
-        self.conv1 = nn.Conv3d(1, 64, kernel_size=7, stride=(2, 2, 2), padding=(3, 3, 3), bias=False)
+        self.conv1 = nn.Conv3d(
+            1, 64,
+            kernel_size=7,
+            stride=(2, 2, 2),
+            padding=(3, 3, 3),
+            bias=False,
+        )
         self.bn1 = nn.BatchNorm3d(64)
         self.relu = nn.ReLU(inplace=True)
         self.maxpool = nn.MaxPool3d(kernel_size=(3, 3, 3), stride=2, padding=1)
@@ -110,10 +223,17 @@ class ResNet3D(nn.Module):
         downsample = None
         if stride != 1 or self.inplanes != planes * block.expansion:
             if shortcut_type == 'A':
-                downsample = partial(downsample_basic_block, planes=planes * block.expansion, stride=stride)
+                downsample = partial(
+                    downsample_basic_block,
+                    planes=planes * block.expansion,
+                    stride=stride,
+                )
             else:
                 downsample = nn.Sequential(
-                    nn.Conv3d(self.inplanes, planes * block.expansion, kernel_size=1, stride=stride, bias=False),
+                    nn.Conv3d(
+                        self.inplanes, planes * block.expansion,
+                        kernel_size=1, stride=stride, bias=False,
+                    ),
                     nn.BatchNorm3d(planes * block.expansion),
                 )
 
@@ -146,7 +266,7 @@ def resnet18_3d(**kwargs) -> ResNet3D:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 2. SuStaIn Multi-Head Model Architecture (src/model.py from Git commit f93d83a)
+# 3. SUSTAIN CNN MODEL (src/model.py from Git commit 951c423)
 # ══════════════════════════════════════════════════════════════════════════════
 
 class SuStaInCNN(nn.Module):
@@ -155,7 +275,6 @@ class SuStaInCNN(nn.Module):
 
         self.backbone = resnet18_3d()
 
-        # Head 1: Subtype Predictor
         self.subtype_head = nn.Sequential(
             nn.Linear(feature_dim, 64),
             nn.GELU(),
@@ -163,7 +282,6 @@ class SuStaInCNN(nn.Module):
             nn.Linear(64, num_subtypes)
         )
 
-        # Heads 2, 3, 4: 3 Subtype-specific Stage Predictors
         self.stage_heads = nn.ModuleList([
             nn.Sequential(
                 nn.Linear(feature_dim, 64),
@@ -181,7 +299,7 @@ class SuStaInCNN(nn.Module):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 3. Dataset Loader (src/data.py from Git commit f93d83a)
+# 4. DATASET (src/data.py from Git commit 951c423)
 # ══════════════════════════════════════════════════════════════════════════════
 
 TARGET_SHAPE = (128, 128, 128)
@@ -263,14 +381,75 @@ class SuStaInDataset(Dataset):
         }
 
 
+class MockDataset(Dataset):
+    def __init__(self, size: int = 40):
+        self.size = size
+        rng = np.random.default_rng(42)
+        self._subtypes = rng.choice([0, 1, 2], size=size)
+        self._stages = rng.uniform(0.0, 48.0, size=size).astype(np.float32)
+        
+        self._probs = []
+        for s in self._subtypes:
+            p = rng.dirichlet([1.0, 1.0, 1.0])
+            p[s] += 2.0
+            p /= p.sum()
+            self._probs.append(p)
+        self._probs = np.array(self._probs, dtype=np.float32)
+
+    def __len__(self) -> int:
+        return self.size
+
+    def get_labels(self) -> np.ndarray:
+        return self._subtypes
+
+    def __getitem__(self, idx: int) -> dict:
+        return {
+            'mri': torch.randn(1, *TARGET_SHAPE),
+            'subtype_probs': torch.tensor(self._probs[idx], dtype=torch.float32),
+            'assigned_subtype': torch.tensor(self._subtypes[idx], dtype=torch.long),
+            'assigned_stage': torch.tensor(self._stages[idx], dtype=torch.float32),
+            'subject_id': f'mock_{idx:03d}'
+        }
+
+
 # ══════════════════════════════════════════════════════════════════════════════
-# 4. Training & Evaluation Pipeline (train_sustain_cnn.py from Git commit f93d83a)
+# 5. TRAINING & EVALUATION PIPELINE (train_sustain_cnn.py from Git commit 951c423)
 # ══════════════════════════════════════════════════════════════════════════════
 
-def set_global_seed(seed=12345):
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    np.random.seed(seed)
+def parse_args():
+    p = argparse.ArgumentParser(
+        description='SuStaIn CNN: Train 3D ResNet-18 for Subtype and Stage prediction.',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+
+    p.add_argument('--experiment_name', type=str, required=True,
+                   help='Unique name for the run.')
+    p.add_argument('--mock_data', action='store_true',
+                   help='Use randomly generated mock tensors for local pipeline testing.')
+    p.add_argument('--data_root', type=str, default='/kaggle/input/kisokoghan-paired-npz/paired_npz',
+                   help='Directory containing subject .npz files.')
+    p.add_argument('--csv_path', type=str, default='/kaggle/input/sustain-data/sustain_subject_staging_results_filter_cn.csv',
+                   help='Path to the sustain staging results CSV file.')
+    p.add_argument('--train_ratio', type=float, default=0.7,
+                   help='Train fraction for single-split mode.')
+    p.add_argument('--val_ratio', type=float, default=0.1,
+                   help='Validation fraction for single-split mode.')
+    p.add_argument('--batch_size', type=int, default=4)
+    p.add_argument('--num_workers', type=int, default=4)
+    p.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu')
+    p.add_argument('--epochs', type=int, default=60)
+    p.add_argument('--seed', type=int, default=12345)
+    p.add_argument('--kfold', type=int, default=5,
+                   help='Number of cross-validation folds. 0 = disabled.')
+    p.add_argument('--lr', type=float, default=0.0002)
+    p.add_argument('--weight_decay', type=float, default=1e-3)
+    p.add_argument('--gamma', type=float, default=0.95,
+                   help='LR decay rate for ExponentialLR.')
+    p.add_argument('--lambda_subtype', type=float, default=1.0)
+    p.add_argument('--lambda_stage', type=float, default=1.0)
+
+    args = p.parse_args()
+    return args
 
 
 def train_epoch(model, loader, optimizer, args):
@@ -286,14 +465,11 @@ def train_epoch(model, loader, optimizer, args):
         assigned_stage = batch['assigned_stage'].to(args.device)
 
         B = mri.size(0)
-
         subtype_logits, stage_logits_list = model(mri)
 
-        # Subtype Loss
         log_probs = F.log_softmax(subtype_logits, dim=-1)
         loss_sub = -(subtype_probs * log_probs).sum(dim=-1).mean()
 
-        # Stage Loss
         ordinal_targets = torch.zeros(B, 48, device=args.device)
         for i in range(B):
             S = int(torch.clamp(assigned_stage[i], min=0, max=48).item())
@@ -459,7 +635,7 @@ def train_fold_pipeline(train_idx, val_idx, test_idx, dataset, fold_name, args):
     best_val_qwk = -1.0
     best_val_rho = 0.0
 
-    output_dir = args.output_dir
+    output_dir = os.path.join("outputs", "runs", args.experiment_name)
     os.makedirs(output_dir, exist_ok=True)
 
     for epoch in range(1, args.epochs + 1):
@@ -470,8 +646,10 @@ def train_fold_pipeline(train_idx, val_idx, test_idx, dataset, fold_name, args):
 
         if epoch == 1 or epoch % 10 == 0 or epoch == args.epochs:
             print(f"Epoch {epoch:02d}/{args.epochs:02d} | "
-                  f"Tr Loss: {tr_loss:.4f} | Val Loss: {val_loss:.4f} | "
-                  f"Sub Acc: {val_acc:.3f}, F1: {val_f1:.3f} | Stg MAE: {val_mae:.2f}, Rho: {val_rho:.3f}")
+                  f"Tr Loss: {tr_loss:.4f} (Sub: {tr_sub:.3f}, Stg: {tr_stg:.3f}) | "
+                  f"Val Loss: {val_loss:.4f} (Sub: {val_sub:.3f}, Stg: {val_stg:.3f}) | "
+                  f"Sub Acc: {val_acc:.3f}, F1: {val_f1:.3f}, MSE: {val_mse:.4f} | "
+                  f"Stg MAE: {val_mae:.2f}, QWK: {val_qwk:.3f}, Rho: {val_rho:.3f}")
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss
@@ -484,13 +662,24 @@ def train_fold_pipeline(train_idx, val_idx, test_idx, dataset, fold_name, args):
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
                 'val_loss': val_loss,
+                'val_mae': val_mae,
+                'val_qwk': val_qwk,
+                'val_rho': val_rho
             }, best_path)
 
-    checkpoint = torch.load(os.path.join(output_dir, f"best_model_{fold_name}.pth"), map_location=args.device)
+    latest_path = os.path.join(output_dir, f"latest_model_{fold_name}.pth")
+    torch.save({
+        'epoch': args.epochs,
+        'model_state_dict': model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict()
+    }, latest_path)
+
+    print(f"Loading best model checkpoint for Fold {fold_name} and running inference on Test partition...")
+    checkpoint = torch.load(os.path.join(output_dir, f"best_model_{fold_name}.pth"), map_location=args.device, weights_only=False)
     model.load_state_dict(checkpoint['model_state_dict'])
 
     test_loss, test_sub, test_stg, test_acc, test_f1, test_mse, test_mae, test_qwk, test_rho = evaluate(model, test_loader, args)
-    print(f"---> Fold {fold_name} TEST Performance: Loss: {test_loss:.4f} | Sub Acc: {test_acc:.3f}, F1: {test_f1:.3f} | Stg MAE: {test_mae:.2f}, Rho: {test_rho:.3f}")
+    print(f"---> Fold {fold_name} TEST Performance: Loss: {test_loss:.4f} | Sub Acc: {test_acc:.3f}, F1: {test_f1:.3f} | Stg MAE: {test_mae:.2f}, QWK: {test_qwk:.3f}")
 
     test_predictions = predict_test(model, test_loader, args)
     for pred in test_predictions:
@@ -500,65 +689,89 @@ def train_fold_pipeline(train_idx, val_idx, test_idx, dataset, fold_name, args):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Kaggle SuStaIn CNN Baseline (Exact Match to Commit f93d83a)")
-    parser.add_argument('--csv_path', type=str, default='/kaggle/input/sustain-data/sustain_subject_staging_results_filter_cn.csv')
-    parser.add_argument('--data_root', type=str, default='/kaggle/input/kisokoghan-paired-npz/paired_npz')
-    parser.add_argument('--output_dir', type=str, default='/kaggle/working/sustain_baseline_output')
-    parser.add_argument('--batch_size', type=int, default=4)
-    parser.add_argument('--num_workers', type=int, default=2)
-    parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu')
-    parser.add_argument('--epochs', type=int, default=60)
-    parser.add_argument('--seed', type=int, default=12345)
-    parser.add_argument('--kfold', type=int, default=5)
-    parser.add_argument('--lr', type=float, default=0.0002)
-    parser.add_argument('--weight_decay', type=float, default=1e-3)
-    parser.add_argument('--gamma', type=float, default=0.95)
-    parser.add_argument('--lambda_subtype', type=float, default=1.0)
-    parser.add_argument('--lambda_stage', type=float, default=1.0)
-    args = parser.parse_args()
-
+    args = parse_args()
     set_global_seed(args.seed)
-    os.makedirs(args.output_dir, exist_ok=True)
 
-    print(f"Loading data from: {args.data_root}")
-    dataset = SuStaInDataset(npz_root=args.data_root, csv_path=args.csv_path)
+    log_dir = os.path.join("outputs", "runs", args.experiment_name)
+    os.makedirs(log_dir, exist_ok=True)
+    tee = save_run_config(args, os.path.join(log_dir, "train_log.txt"))
+
+    print_experiment_config(args)
+
+    if args.mock_data:
+        print("Using MOCK data for local verification...")
+        dataset = MockDataset(size=40)
+    else:
+        print(f"Loading real data from: {args.data_root}")
+        dataset = SuStaInDataset(npz_root=args.data_root, csv_path=args.csv_path)
 
     all_oof_predictions = []
-    subtypes = dataset.get_labels()
-    skf = StratifiedKFold(n_splits=args.kfold, shuffle=True, random_state=args.seed)
 
-    test_losses, test_accs, test_f1s, test_maes, test_rhos = [], [], [], [], []
+    if args.kfold > 0:
+        print(f"Starting {args.kfold}-Fold Stratified Cross Validation...")
+        subtypes = dataset.get_labels()
+        skf = StratifiedKFold(n_splits=args.kfold, shuffle=True, random_state=args.seed)
 
-    for fold, (trainval_idx, test_idx) in enumerate(skf.split(np.zeros(len(dataset)), subtypes), start=1):
-        rng = np.random.default_rng(args.seed + fold)
-        shuffled_trainval = rng.permutation(trainval_idx)
-        split_point = int(0.85 * len(shuffled_trainval))
-        train_idx = shuffled_trainval[:split_point]
-        val_idx = shuffled_trainval[split_point:]
+        test_losses, test_accs, test_f1s, test_maes, test_qwks, test_rhos = [], [], [], [], [], []
 
-        loss, acc, f1, mae, qwk, rho, preds = train_fold_pipeline(
-            train_idx, val_idx, test_idx, dataset, f"fold{fold}", args
+        for fold, (trainval_idx, test_idx) in enumerate(skf.split(np.zeros(len(dataset)), subtypes), start=1):
+            rng = np.random.default_rng(args.seed + fold)
+            shuffled_trainval = rng.permutation(trainval_idx)
+            split_point = int(0.85 * len(shuffled_trainval))
+            train_idx = shuffled_trainval[:split_point]
+            val_idx = shuffled_trainval[split_point:]
+
+            loss, acc, f1, mae, qwk, rho, preds = train_fold_pipeline(
+                train_idx, val_idx, test_idx, dataset, f"fold{fold}", args
+            )
+
+            test_losses.append(loss)
+            test_accs.append(acc)
+            test_f1s.append(f1)
+            test_maes.append(mae)
+            test_qwks.append(qwk)
+            test_rhos.append(rho)
+            all_oof_predictions.extend(preds)
+
+        print(f"\n==================================================")
+        print(f"OOF (Out-Of-Fold) Test Summary ({args.kfold} Folds):")
+        print(f"  Mean Test Loss: {np.mean(test_losses):.4f} +/- {np.std(test_losses):.4f}")
+        print(f"  Mean Test Acc:  {np.mean(test_accs):.3f} +/- {np.std(test_accs):.3f}")
+        print(f"  Mean Test F1:   {np.mean(test_f1s):.3f} +/- {np.std(test_f1s):.3f}")
+        print(f"  Mean Test MAE:  {np.mean(test_maes):.2f} +/- {np.std(test_maes):.2f}")
+        print(f"  Mean Test QWK:  {np.mean(test_qwks):.3f} +/- {np.std(test_qwks):.3f}")
+        print(f"  Mean Test Rho:  {np.mean(test_rhos):.3f} +/- {np.std(test_rhos):.3f}")
+        print(f"==================================================")
+    else:
+        print("Starting Single Split Train/Val/Test...")
+        generator = torch.Generator().manual_seed(args.seed)
+        train_size = int(args.train_ratio * len(dataset))
+        val_size = int(args.val_ratio * len(dataset))
+        test_size = len(dataset) - train_size - val_size
+
+        trainval_ds, test_ds = random_split(
+            dataset, [train_size + val_size, test_size], generator=generator
         )
 
-        test_losses.append(loss)
-        test_accs.append(acc)
-        test_f1s.append(f1)
-        test_maes.append(mae)
-        test_rhos.append(rho)
+        train_size_split = int((args.train_ratio / (args.train_ratio + args.val_ratio)) * len(trainval_ds))
+        val_size_split = len(trainval_ds) - train_size_split
+        train_ds, val_ds = random_split(
+            trainval_ds, [train_size_split, val_size_split], generator=generator
+        )
+
+        _, _, _, _, _, _, preds = train_fold_pipeline(
+            train_ds.indices, val_ds.indices, test_ds.indices, dataset, "single_split", args
+        )
         all_oof_predictions.extend(preds)
 
-    print(f"\n==================================================")
-    print(f"OOF (Out-Of-Fold) Test Summary ({args.kfold} Folds):")
-    print(f"  Mean Test Acc:  {np.mean(test_accs):.3f} +/- {np.std(test_accs):.3f}")
-    print(f"  Mean Test F1:   {np.mean(test_f1s):.3f} +/- {np.std(test_f1s):.3f}")
-    print(f"  Mean Test MAE:  {np.mean(test_maes):.2f} +/- {np.std(test_maes):.2f}")
-    print(f"  Mean Test Rho:  {np.mean(test_rhos):.3f} +/- {np.std(test_rhos):.3f}")
-    print(f"==================================================")
-
     pred_df = pd.DataFrame(all_oof_predictions)
-    pred_csv_path = os.path.join(args.output_dir, "sustain_baseline_predictions.csv")
+    pred_csv_path = os.path.join(log_dir, f"{args.experiment_name}_predictions.csv")
     pred_df.to_csv(pred_csv_path, index=False)
-    print(f"\nSaved test predictions CSV to: {pred_csv_path}")
+    print(f"\n✓ Saved test predictions CSV to: {pred_csv_path}")
+
+    sys.stdout = tee.restore()
+    print("Training process completed.")
+
 
 if __name__ == '__main__':
     main()
