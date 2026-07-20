@@ -2,9 +2,9 @@
 test_fix1_kaggle_diagnostic.py
 ================================
 Diagnostic verification & visual inspection script for Kaggle.
-Evaluates Fix 1 (Masked Global Pooling) across all subjects in the dataset AND
-generates multi-panel feature map visualization plots showing what the 3D ResNet-18
-sees after EVERY layer (Stem -> Layer 1 -> Layer 2 -> Layer 3 -> Layer 4 -> Masked Pooling).
+Evaluates Fix 1 (Masked Global Pooling) with Layer 4 stride=1 (8x8x8 resolution = 512 spatial cells).
+Generates multi-panel feature map visualization plots showing what the 3D ResNet-18
+sees after EVERY layer (Stem -> Layer 1 -> Layer 2 -> Layer 3 -> Layer 4 (8x8x8) -> Masked Pooling).
 """
 
 import argparse
@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 1. 3D ResNet-18 Backbone & Layer-by-Layer Feature Hook Extractor
+# 1. 3D ResNet-18 Backbone (Layer 4 stride=1 for 8x8x8 = 512 cells resolution)
 # ══════════════════════════════════════════════════════════════════════════════
 
 def conv3x3x3(in_planes, out_planes, stride=1):
@@ -50,12 +50,12 @@ class BasicBlock3D(nn.Module):
 
 class ResNet3D_LayerInspector(nn.Module):
     """
-    3D ResNet-18 backbone that returns intermediate feature maps after EVERY layer stage:
+    3D ResNet-18 backbone with Layer 4 stride=1:
       - stem_out  : (64, 32, 32, 32)
       - layer1_out: (64, 32, 32, 32)
       - layer2_out: (128, 16, 16, 16)
       - layer3_out: (256, 8, 8, 8)
-      - layer4_out: (512, 4, 4, 4)
+      - layer4_out: (512, 8, 8, 8) -> 512 spatial feature cells!
     """
     def __init__(self, spatial_size=128, sample_duration=128):
         super().__init__()
@@ -69,7 +69,8 @@ class ResNet3D_LayerInspector(nn.Module):
         self.layer1 = self._make_layer(64, 2, stride=1)
         self.layer2 = self._make_layer(128, 2, stride=2)
         self.layer3 = self._make_layer(256, 2, stride=2)
-        self.layer4 = self._make_layer(512, 2, stride=2)
+        # Set Layer 4 stride=1 to maintain 8x8x8 spatial resolution (512 cells)
+        self.layer4 = self._make_layer(512, 2, stride=1)
 
         for m in self.modules():
             if isinstance(m, nn.Conv3d):
@@ -114,7 +115,7 @@ def generate_downsampled_mask(x, target_shape, threshold=1e-4):
     Dynamically generates downsampled 3D binary brain mask M (B, 1, D, H, W) matching target_shape.
     1. Threshold raw MRI volume (> 1e-4) -> binary mask.
     2. Apply 3D Max-Pooling (kernel=3, padding=1) to dilate and smoothly pad outer brain shell.
-    3. Adaptively downsample to target_shape (e.g. 4x4x4) using F.adaptive_max_pool3d.
+    3. Adaptively downsample to target_shape (e.g. 8x8x8) using F.adaptive_max_pool3d.
        (Ensures any cell containing > 0% brain tissue is set to 1.0).
     """
     raw_mask = (x > threshold).float()
@@ -183,7 +184,7 @@ def save_layer_inspection_plot(x, layer_outputs, mask_down, subject_id, save_pat
     # 6. Layer 4 Activation BEFORE Masking
     im5 = axes[1, 1].imshow(l4_slice, cmap='inferno')
     l4_shape = layer_outputs['layer4'].shape
-    axes[1, 1].set_title(f"Layer 4 BEFORE Mask\n({l4_shape[1]}x{l4_shape[2]}x{l4_shape[3]} - Noise in corners!)", fontsize=10, weight='bold', color='darkred')
+    axes[1, 1].set_title(f"Layer 4 BEFORE Mask\n({l4_shape[1]}x{l4_shape[2]}x{l4_shape[3]} - Noise in background!)", fontsize=10, weight='bold', color='darkred')
     plt.colorbar(im5, ax=axes[1, 1], fraction=0.046, pad=0.04)
 
     # 7. Downsampled 3D Brain Mask
@@ -200,11 +201,11 @@ def save_layer_inspection_plot(x, layer_outputs, mask_down, subject_id, save_pat
     for ax in axes.flat:
         ax.axis('off')
 
-    plt.suptitle(f"Layer-by-Layer Feature Activation Inspection — Subject: {subject_id}", fontsize=14, weight='bold', y=0.98)
+    plt.suptitle(f"Layer-by-Layer Feature Activation Inspection (Layer4 Stride=1, 8x8x8) — Subject: {subject_id}", fontsize=13, weight='bold', y=0.98)
     plt.tight_layout()
     plt.savefig(save_path, dpi=200, bbox_inches='tight')
     plt.close()
-    print(f" Saved layer-by-layer inspection plot to:\n   {save_path}")
+    print(f" Saved high-resolution 8x8x8 layer inspection plot to:\n   {save_path}")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -214,7 +215,7 @@ def save_layer_inspection_plot(x, layer_outputs, mask_down, subject_id, save_pat
 def run_diagnostic(data_root, output_dir, max_plot_samples=3):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print("=" * 80)
-    print("  KAGGLE DIAGNOSTIC & LAYER-BY-LAYER VISUAL INSPECTION (FIX 1)")
+    print("  KAGGLE DIAGNOSTIC & LAYER-BY-LAYER VISUAL INSPECTION (FIX 1: 8x8x8 GRID)")
     print("=" * 80)
     print(f"Device: {device}")
     print(f"Scanning directory: {data_root}")
@@ -240,7 +241,7 @@ def run_diagnostic(data_root, output_dir, max_plot_samples=3):
     bg_noise_after_list = []
     brain_energy_preserved_list = []
 
-    print("\nRunning diagnostic & generating layer inspection plots...")
+    print("\nRunning diagnostic & generating 8x8x8 layer inspection plots...")
 
     with torch.no_grad():
         for idx, fname in enumerate(all_files):
@@ -257,12 +258,12 @@ def run_diagnostic(data_root, output_dir, max_plot_samples=3):
 
             # Extract layer outputs
             layer_outputs = model(x)
-            H = layer_outputs['layer4']  # Shape (1, 512, D_l4, H_l4, W_l4)
+            H = layer_outputs['layer4']  # Shape (1, 512, 8, 8, 8)
             target_spatial_shape = H.shape[2:]
             total_cells = target_spatial_shape[0] * target_spatial_shape[1] * target_spatial_shape[2]
             total_spatial_cells_list.append(total_cells)
 
-            # Downsample mask dynamically to match layer4 spatial dimensions exactly
+            # Downsample mask dynamically to 8x8x8
             M_down = generate_downsampled_mask(x, target_spatial_shape).to(device)
 
             n_brain_cells = float(M_down.sum().item())
@@ -285,15 +286,15 @@ def run_diagnostic(data_root, output_dir, max_plot_samples=3):
             # Save visual plots for first few subjects
             if idx < max_plot_samples:
                 subject_id = fname.replace('.npz', '')
-                plot_path = os.path.join(output_dir, f"layer_inspection_{subject_id}.png")
+                plot_path = os.path.join(output_dir, f"layer_inspection_{subject_id}_8x8x8.png")
                 save_layer_inspection_plot(x, layer_outputs, M_down, subject_id, plot_path)
 
             if (idx + 1) % 50 == 0 or (idx + 1) == len(all_files):
-                print(f"  [{idx + 1}/{len(all_files)}] Processed '{fname}' -> Active Brain Cells: {int(n_brain_cells)}/{total_cells} | BG Noise Before: {bg_noise_before:.4f} | After: {bg_noise_after:.4f}")
+                print(f"  [{idx + 1}/{len(all_files)}] Processed '{fname}' -> Active Brain Cells: {int(n_brain_cells)}/{total_cells} ({n_brain_cells/total_cells*100:.1f}%) | BG Noise Before: {bg_noise_before:.4f} | After: {bg_noise_after:.4f}")
 
     total_cells_val = total_spatial_cells_list[0]
     print("\n" + "=" * 80)
-    print("  FINAL DIAGNOSTIC VERIFICATION REPORT")
+    print("  FINAL DIAGNOSTIC VERIFICATION REPORT (8x8x8 MASK)")
     print("=" * 80)
     print(f"Total Subjects Evaluated            : {len(all_files)}")
     print(f"Layer 4 Feature Map Shape           : (512, {target_spatial_shape[0]}, {target_spatial_shape[1]}, {target_spatial_shape[2]}) -> {total_cells_val} Spatial Cells")
@@ -306,7 +307,7 @@ def run_diagnostic(data_root, output_dir, max_plot_samples=3):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Kaggle Layer-by-Layer Feature Visualizer for Fix 1")
+    parser = argparse.ArgumentParser(description="Kaggle Layer-by-Layer Feature Visualizer for Fix 1 (8x8x8)")
     parser.add_argument('--data_root', type=str, default='/kaggle/input/datasets/kisokoghan/paired-npz/paired_npz',
                         help='Directory containing subject .npz files.')
     parser.add_argument('--output_dir', type=str, default='/kaggle/working/diagnostic_inspection_plots',
