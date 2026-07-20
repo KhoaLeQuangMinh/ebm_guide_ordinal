@@ -1,9 +1,14 @@
 """
 train_kaggle_baseline_sustain_cnn.py
 ====================================
-Exact, un-modified 1-to-1 copy of Git commit 951c423
-(Initial SuStaIn 3D ResNet-18 baseline before 4-class classification head).
-Combined into a single self-contained Python file for Kaggle.
+SuStaIn 3D ResNet-18 Multi-Task CNN with FIX 1 (Masked Global Pooling).
+
+Fix 1 Upgrades:
+  1. Layer 4 Stride = 1: Preserves 8x8x8 spatial resolution (512 spatial feature cells).
+  2. Masked Global Pooling: Dynamically downsamples 3D brain mask to 8x8x8 and zeroes out
+     100% of background BatchNorm noise before feature projection to 128D latent vector.
+
+All other components (5-fold CV, loss functions, CLI arguments, OOF CSV export) remain identical.
 """
 
 import argparse
@@ -32,7 +37,7 @@ warnings.filterwarnings('ignore', message='.*deterministic.*')
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 1. UTILS (src/utils.py from Git commit 951c423)
+# 1. UTILS (src/utils.py)
 # ══════════════════════════════════════════════════════════════════════════════
 
 class Tee:
@@ -81,7 +86,8 @@ def print_experiment_config(args):
     print(f"  Experiment : {args.experiment_name}")
     print("-" * 60)
     print(f"  Task       : SuStaIn Subtype & Stage Multi-Task CNN")
-    print(f"  Encoder    : 3D ResNet-18 (prototype-free)")
+    print(f"  Encoder    : 3D ResNet-18 + Masked Global Pooling (Fix 1)")
+    print(f"  Resolution : Layer 4 (8x8x8 = 512 spatial cells)")
     print(f"  Loss       : Soft Cross-Entropy (Subtype) + Ordinal BCE (Stage)")
     print("-" * 60)
     print(f"  Device     : {args.device}")
@@ -121,7 +127,7 @@ def seed_worker(worker_id):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 2. 3D RESNET-18 BACKBONE (src/models/resnet3d.py from Git commit 951c423)
+# 2. 3D RESNET-18 BACKBONE (Layer 4 Stride=1 for 8x8x8 Resolution)
 # ══════════════════════════════════════════════════════════════════════════════
 
 def conv3x3x3(in_planes, out_planes, stride=1):
@@ -178,8 +184,6 @@ class ResNet3D(nn.Module):
         self,
         block=BasicBlock,
         layers=[2, 2, 2, 2],
-        spatial_size=128,
-        sample_duration=128,
         shortcut_type='B',
     ):
         self.inplanes = 64
@@ -196,21 +200,11 @@ class ResNet3D(nn.Module):
         self.relu = nn.ReLU(inplace=True)
         self.maxpool = nn.MaxPool3d(kernel_size=(3, 3, 3), stride=2, padding=1)
 
-        self.layer1 = self._make_layer(block, 64, layers[0], shortcut_type)
+        self.layer1 = self._make_layer(block, 64, layers[0], shortcut_type, stride=1)
         self.layer2 = self._make_layer(block, 128, layers[1], shortcut_type, stride=2)
         self.layer3 = self._make_layer(block, 256, layers[2], shortcut_type, stride=2)
-        self.layer4 = self._make_layer(block, 512, layers[3], shortcut_type, stride=2)
-
-        last_duration = int(math.ceil(sample_duration / 32))
-        last_size = int(math.ceil(spatial_size / 32))
-        self.avgpool = nn.AvgPool3d((last_duration, last_size, last_size), stride=1)
-
-        self.fc1 = nn.Sequential(
-            nn.Linear(512, 256),
-            nn.ReLU(inplace=True),
-            nn.Dropout(0.5),
-            nn.Linear(256, 128),
-        )
+        # FIX 1: Set Layer 4 stride=1 to maintain 8x8x8 spatial resolution (512 spatial cells)
+        self.layer4 = self._make_layer(block, 512, layers[3], shortcut_type, stride=1)
 
         for m in self.modules():
             if isinstance(m, nn.Conv3d):
@@ -253,12 +247,8 @@ class ResNet3D(nn.Module):
         x = self.layer1(x)
         x = self.layer2(x)
         x = self.layer3(x)
-        x = self.layer4(x)
-
-        x = self.avgpool(x)
-        x = x.view(x.size(0), -1)
-        x = self.fc1(x)
-        return x
+        feature_maps = self.layer4(x)  # Shape: (B, 512, 8, 8, 8)
+        return feature_maps
 
 
 def resnet18_3d(**kwargs) -> ResNet3D:
@@ -266,14 +256,34 @@ def resnet18_3d(**kwargs) -> ResNet3D:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 3. SUSTAIN CNN MODEL (src/model.py from Git commit 951c423)
+# 3. MASKED GLOBAL POOLING & SUSTAIN CNN MODEL (FIX 1)
 # ══════════════════════════════════════════════════════════════════════════════
+
+def generate_downsampled_mask(x: torch.Tensor, target_shape, threshold: float = 1e-4) -> torch.Tensor:
+    """
+    Dynamically generates downsampled 3D binary brain mask M (B, 1, D, H, W) matching target_shape.
+    1. Threshold raw MRI volume (> 1e-4) -> binary mask.
+    2. Apply 3D Max-Pooling (kernel=3, padding=1) to dilate and smoothly pad outer brain shell.
+    3. Adaptively downsample to target_shape (e.g. 8x8x8) using F.adaptive_max_pool3d.
+    """
+    raw_mask = (x > threshold).float()
+    dilated_mask = F.max_pool3d(raw_mask, kernel_size=3, stride=1, padding=1)
+    mask_down = F.adaptive_max_pool3d(dilated_mask, output_size=target_shape)
+    return mask_down
+
 
 class SuStaInCNN(nn.Module):
     def __init__(self, feature_dim: int = 128, num_subtypes: int = 3, num_events: int = 48, dropout: float = 0.1):
         super().__init__()
 
         self.backbone = resnet18_3d()
+
+        self.fc1 = nn.Sequential(
+            nn.Linear(512, 256),
+            nn.ReLU(inplace=True),
+            nn.Dropout(0.5),
+            nn.Linear(256, feature_dim),
+        )
 
         self.subtype_head = nn.Sequential(
             nn.Linear(feature_dim, 64),
@@ -292,14 +302,28 @@ class SuStaInCNN(nn.Module):
         ])
 
     def forward(self, mri: torch.Tensor):
-        features = self.backbone(mri)
+        # 1. Extract 3D feature map from backbone (B, 512, 8, 8, 8)
+        feature_map = self.backbone(mri)
+
+        # 2. FIX 1: Generate downsampled 8x8x8 3D binary brain mask
+        mask = generate_downsampled_mask(mri, target_shape=feature_map.shape[2:]).to(mri.device)
+
+        # 3. FIX 1: Zero out background feature noise
+        masked_map = feature_map * mask
+
+        # 4. FIX 1: Masked Global Average Pooling (average ONLY valid brain feature cells)
+        pooled = masked_map.sum(dim=(2, 3, 4)) / (mask.sum(dim=(2, 3, 4)) + 1e-8)  # (B, 512)
+
+        # 5. Project to 128D latent vector
+        features = self.fc1(pooled)  # (B, 128)
+
         subtype_logits = self.subtype_head(features)
         stage_outputs = [head(features) for head in self.stage_heads]
         return subtype_logits, stage_outputs
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 4. DATASET (src/data.py from Git commit 951c423)
+# 4. DATASET (src/data.py)
 # ══════════════════════════════════════════════════════════════════════════════
 
 TARGET_SHAPE = (128, 128, 128)
@@ -387,7 +411,7 @@ class MockDataset(Dataset):
         rng = np.random.default_rng(42)
         self._subtypes = rng.choice([0, 1, 2], size=size)
         self._stages = rng.uniform(0.0, 48.0, size=size).astype(np.float32)
-        
+
         self._probs = []
         for s in self._subtypes:
             p = rng.dirichlet([1.0, 1.0, 1.0])
@@ -413,12 +437,12 @@ class MockDataset(Dataset):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 5. TRAINING & EVALUATION PIPELINE (train_sustain_cnn.py from Git commit 951c423)
+# 5. TRAINING & EVALUATION PIPELINE
 # ══════════════════════════════════════════════════════════════════════════════
 
 def parse_args():
     p = argparse.ArgumentParser(
-        description='SuStaIn CNN: Train 3D ResNet-18 for Subtype and Stage prediction.',
+        description='SuStaIn CNN with FIX 1 (Masked Global Pooling): Train 3D ResNet-18 for Subtype and Stage.',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
 
